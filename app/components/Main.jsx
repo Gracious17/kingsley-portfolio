@@ -1,6 +1,5 @@
-import Link from "next/link";
 import React from "react";
-import { AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
@@ -21,17 +20,17 @@ const Main = () => {
             </span>
           </div>
           <p className=" uppercase tracking-widest text-sm text-gray-600">
-            Let's build something together
+            Let&apos;s build something together
           </p>
           <h1 className="py-4 text-gray-700">
-            Hi, i'm <span className="text-[#5451e5]">Kingsley</span>
+            Hi, i&apos;m <span className="text-[#5451e5]">Kingsley</span>
           </h1>
           <h1 className="py-2 text-gray-700">A Front-End Web Developer</h1>
           <p className="py-4 text-gray-600 max-w-[70%] m-auto">
-            I'm a front-end web developer specializing in building (and
+            I&apos;m a front-end web developer specializing in building (and
             occasionally designing ) exceptional digital experience. Currently,
-            i'm on building responsive front-end web applications while learning
-            backend technologies
+            i&apos;m on building responsive front-end web applications while
+            learning backend technologies
           </p>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4 md:gap-6">
             <div

@@ -5,10 +5,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import Link from "next/link";
-import {
-  HiOutlineChevronDoubleLeft,
-  HiOutlineChevronDoubleUp,
-} from "react-icons/hi2";
+import { HiOutlineChevronDoubleUp } from "react-icons/hi2";
 const email = "mailto:kingsleygracious16@gmail.com";
 const linkedIn = "https://www.linkedin.com/in/gracious-kingsley";
 const gitHub = "https://github.com/Gracious17";
@@ -38,7 +35,7 @@ const Contact = () => {
                 <p>Front-End Developer</p>
                 <p className="py-4">
                   I am available for freelance or full-time position. Contact me
-                  and let's talk
+                  and let&apos;s talk
                 </p>
               </div>
               <div>
@@ -67,7 +64,7 @@ const Contact = () => {
                   </div>
                   <div
                     data-aos="fade-left"
-                    className=" rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300 cursor-pointer"
+                    className="rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300 cursor-pointer"
                   >
                     <a href={`${email}`}>
                       <AiOutlineMail size={30} />
@@ -76,7 +73,7 @@ const Contact = () => {
                   <div
                     data-aos="fade-left"
                     data-aos-delay="400"
-                    className=" rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300 cursor-pointer"
+                    className="rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300 cursor-pointer"
                   >
                     <BsFillPersonLinesFill size={30} />
                   </div>
@@ -84,7 +81,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          {/* right */}
+          {/* right  */}
 
           <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400  rounded-xl lg:-4">
             <div className="p-4">

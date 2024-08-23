@@ -1,10 +1,8 @@
-import Image from "next/image";
 import React from "react";
 import agencyImg from "../../public/assets/projects/agency.jpg";
 import ProjectItem from "./ProjectItem";
 import passwordGenImg from "../../public/assets/projects/password-gen.png";
 import CendriftImg from "../../public/assets/projects/cendrift.jpg";
-import Link from "next/link";
 const Projects = () => {
   return (
     <div id="projects" className="w-full ">
@@ -12,7 +10,7 @@ const Projects = () => {
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Projects
         </p>
-        <h2 className="py-4">What i've Built </h2>
+        <h2 className="py-4">What i&apos;ve Built </h2>
         <div className="grid md:grid-cols-2 gap-4">
           <ProjectItem
             title="Agency Website"

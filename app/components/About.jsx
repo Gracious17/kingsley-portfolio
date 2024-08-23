@@ -1,8 +1,9 @@
+import React, { Component } from "react";
 import Image from "next/image";
-import React from "react";
 import AboutImg from "../../public/assets/about.jpg";
-import { FaArrowDown } from "react-icons/fa";
 import myImg from "../../public/assets/me2.png";
+import { FaArrowDown } from "react-icons/fa";
+
 const About = () => {
   return (
     <div id="about" className="w-full  md:h-screen p-2 flex items-center py-16">
@@ -16,7 +17,7 @@ const About = () => {
           </p>
           <h2 className="py-4"> Who I Am</h2>
           <p className="py-2 text-gray-600">
-            // I am a Motivated passionate Developer
+            I am a Motivated passionate Developer
           </p>
           <p className="py-2 text-gray-600">
             I have spent 2yrs in the Tech field, Learning and Building
