@@ -8,7 +8,7 @@ import Contact from "./components/Contact";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 
-const page = () => {
+const Page = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -28,4 +28,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
