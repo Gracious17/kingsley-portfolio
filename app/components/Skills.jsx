@@ -18,7 +18,8 @@ const Skills = () => {
         </p>
         <h2 className="py-4">What I can Do</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
+          {/* HTML */}
+          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 ">
             <div className="grid grid-cols-2 justify-center items-center">
               <div data-aos="fade-up" className="m-auto">
                 <Image src={Html} alt="/" width={120} height={120} />
@@ -28,7 +29,8 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
+          {/* CSS */}
+          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 ">
             <div className="grid grid-cols-2 justify-center items-center">
               <div data-aos="fade-out" data-aos-delay="200" className="m-auto">
                 <Image src={Css} alt="/" width={120} height={120} />
@@ -38,7 +40,8 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
+          {/* JAVASCRIPT */}
+          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 ">
             <div className="grid grid-cols-2 justify-center items-center">
               <div data-aos="fade-up" className="m-auto">
                 <Image src={Javascript} alt="/" width={120} height={120} />
@@ -48,7 +51,8 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
+          {/* REACTJS */}
+          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 ">
             <div className="grid grid-cols-2 justify-center items-center">
               <div data-aos="fade-up" className="m-auto">
                 <Image src={react} alt="/" width={120} height={120} />

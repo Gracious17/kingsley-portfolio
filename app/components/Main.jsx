@@ -8,6 +8,8 @@ const linkedIn = "https://www.linkedin.com/in/gracious-kingsley";
 const gitHub = "https://github.com/Gracious17";
 
 const Main = () => {
+  let day = new Date().getDay();
+
   return (
     <div id="home" className="-w-full h-screen text-center">
       <div className="max-w-[1240px w-full h-full mx-auto  p-2 flex justify-center items-center">
@@ -19,18 +21,25 @@ const Main = () => {
               </span>
             </span>
           </div>
+          <div className="m-auto w-40 text-neutral-400">
+            {day >= 1 && day <= 5 ? (
+              <h1 className="text-sm">Happy Weekday💻👷🏾</h1>
+            ) : (
+              <h1 className="text-sm">Looking forward to the new Week🎉</h1>
+            )}
+          </div>
           <p className=" uppercase tracking-widest text-sm text-gray-600">
             Let&apos;s build something together
           </p>
           <h1 className="py-4 text-gray-700">
             Hi, i&apos;m <span className="text-[#5451e5]">Kingsley</span>
           </h1>
-          <h1 className="py-2 text-gray-700">A Front-End Web Developer</h1>
+          <h1 className="py-2 text-gray-700">A Full-Stack Web Developer</h1>
           <p className="py-4 text-gray-600 max-w-[70%] m-auto">
-            I&apos;m a front-end web developer specializing in building (and
+            I&apos;m a full-stack web developer specializing in building (and
             occasionally designing ) exceptional digital experience. Currently,
-            i&apos;m on building responsive front-end web applications while
-            learning backend technologies
+            focusing on building the Do-Everything App,  (front-end web applications) and (backend services)
+            
           </p>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4 md:gap-6">
             <div

@@ -20,12 +20,12 @@ const About = () => {
             I am a Motivated passionate Developer
           </p>
           <p className="py-2 text-gray-600">
-            I have spent 2yrs in the Tech field, Learning and Building
-            responsive User Interfaces While mastering backend technologies
+             With over 3yrs experience in the Tech field, Building
+            responsive User Interfaces and rendering backend services
           </p>
           <p className="py-2 text-gray-600">
             Fascinated with how intricating programming is and i am driven to
-            learn more.
+            build  more powerful products.<span className="text-xs font-bold bg-[#5651e5] text-white rounded shadow-inner shadow-black/40">Guess You Don&apos;t Know, I love Innovations😍 </span>
           </p>
           <p className="py-2 text-gray-600 underline cursor-pointer">
             Check out Some of my latest projects

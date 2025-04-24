@@ -50,8 +50,8 @@ const Navbar = () => {
         <Link href="/">
           <div>
             <h1 className="text-[#5651e5]">
-              L<sub>W</sub>
-              <sup className="underline ">Techie</sup>
+              G<sub>r</sub>
+              <sup className="underline ">acious</sup>
             </h1>
           </div>
         </Link>

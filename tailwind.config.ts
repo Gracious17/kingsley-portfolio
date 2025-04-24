@@ -13,6 +13,7 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      
       keyframes: {
         bAndc: {
           "0% ": {
@@ -36,9 +37,25 @@ const config: Config = {
             backgroundColor: "#FFFF00",
           },
         },
+        // X-axis box glide Animation
+  
+        glideX: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        // Y-axis box glide Animation
+  
+        glideY: {
+          "0%": { transform: "translateY(100%)" },
+          "100%": { transform: "translateY(-100%)" },
+        },
       },
+      
+      
       animation: {
         bAndc: "bAndc 15s ease-in-out infinite",
+        glideX: "glideX 15s linear infinite",
+        glideY: "glideY 15s  linear infinite",
       },
     },
   },
