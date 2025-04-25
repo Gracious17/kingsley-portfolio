@@ -1,15 +1,69 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import contactImg from "../../public/assets/contact.jpg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import Link from "next/link";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi2";
+import { AnimatePresence } from "framer-motion";
+import SuccessMessage from "./SuccessMessage";
 const email = "mailto:kingsleygracious16@gmail.com";
 const linkedIn = "https://www.linkedin.com/in/gracious-kingsley";
 const gitHub = "https://github.com/Gracious17";
+const STATUS = {
+  IDLE: 'idle',
+  LOADING: 'loading',
+  SUCCESS: 'success',
+  ERROR: 'error',
+};
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        phone: "",
+        email: "",
+        subject: "",
+        message: "",
+    });
+     const [status, setStatus] = useState(STATUS.IDLE);
+
+
+    const handleChange = (e) => {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+    }
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setStatus("loading");
+      
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+        if (response.ok) {
+          setStatus("success");
+    
+        } else {
+          setStatus("error");
+        }
+      
+      };
+      const resetForm = () => {
+       setFormData({
+         name: "",
+         phone: "",
+         email: "",
+         subject: "",
+         message: "",
+       });
+       setStatus(STATUS.IDLE);
+   }
   return (
     <div id="contact" className="w-full ">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
@@ -85,13 +139,22 @@ const Contact = () => {
 
           <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400  rounded-xl lg:-4">
             <div className="p-4">
-              <form>
+<AnimatePresence mode="wait">
+  {status===STATUS.SUCCESS? (
+    <SuccessMessage key="success" onClose={resetForm} />
+  ):(
+
+              <form onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2 ">Name</label>
                     <input
                       className="border-2 rounded-lg p-3  flex border-gray-300 "
+                     onChange={handleChange}
+                      name="name"
+                      value={formData.name}
                       type="text"
+                      required
                     />
                   </div>
                   <div className="flex flex-col">
@@ -100,7 +163,11 @@ const Contact = () => {
                     </label>
                     <input
                       className="border-2 rounded-lg p-3  flex border-gray-300 "
+                     onChange={handleChange}
+                      name="phone"
+                      value={formData.phone}
                       type="text"
+                      required
                     />
                   </div>
                 </div>
@@ -108,14 +175,23 @@ const Contact = () => {
                   <label className="uppercase text-sm py-2 ">Email</label>
                   <input
                     className="border-2 rounded-lg p-3  flex border-gray-300 "
+                    name="email"
+                    onChange={handleChange}
+                    value={formData.email}
                     type="email"
+                    required
                   />
                 </div>
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2 ">subject</label>
                   <input
                     className="border-2 rounded-lg p-3  flex border-gray-300 "
+                    placeholder="Subject"
+                    name="subject"
+                    onChange={handleChange}
+                    value={formData.subject}
                     type="text"
+                    required
                   />
                 </div>
                 <div className="flex flex-col py-2">
@@ -123,13 +199,23 @@ const Contact = () => {
                   <textarea
                     className="border-2 rounded-lg p-3 border-gray-300"
                     rows="10"
+                    onChange={handleChange}
+                    value={formData.message}
+                    name="message"
+                    required
                   ></textarea>
                 </div>
-                <button className="w-full p-4 text-gray-100 mt-4">
-                  Send Message
+                <button type="submit" className="w-full p-4 text-gray-100 mt-4">
+                
+                {status===STATUS.LOADING ? "Sending...":"Send Message"}
                 </button>
+                {status===STATUS.ERROR && (
+                  <p className="text-red-500 text-sm mt-2">Something went wrong. Please try again.</p>
+                )}
               </form>
-            </div>
+)}
+</AnimatePresence>
+   </div>
           </div>
         </div>
         <div className="flex justify-center py-12 ">
