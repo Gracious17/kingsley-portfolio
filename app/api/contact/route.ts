@@ -3,6 +3,9 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
 const { name, phone, email, message ,subject } = await req.json();
+const headers = new Headers();
+  headers.set('Access-Control-Allow-Origin', '*'); // Allow cross-origin requests
+
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
