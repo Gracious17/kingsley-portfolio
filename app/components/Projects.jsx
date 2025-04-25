@@ -11,7 +11,7 @@ import Link from "next/link";
     title:"Agency Website",
     stack:"Next Js Project",
     backgroundImg:agencyImg,
-    projectUrl:"/property"
+    projectUrl:"/agency"
 
  },
  {

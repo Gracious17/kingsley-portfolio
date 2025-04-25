@@ -32,7 +32,14 @@ const Property = () => {
             veritatis quisquam at debitis commodi iste inventore. Quos,
             laboriosam?
           </p>
-          <button className="px-8 py-2 mt-4 mr-4">Demo</button>
+
+            
+            
+            
+<a href="https://kingsley-agency-site.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Demo">
+          <button className="px-8 py-2 mt-4 mr-4">
+              Demo
+</button> </a>
           <button className="px-8 py-2 mt-4">Code</button>
         </div>
         <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4">

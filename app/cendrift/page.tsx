@@ -38,7 +38,15 @@ const Cendrift = () => {
             veritatis quisquam at debitis commodi iste inventore. Quos,
             laboriosam?
           </p>
-          <button className="px-8 py-2 mt-4 mr-4">Demo</button>
+          <a
+            href="https://www.cendrift.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Demo"
+          >
+            <button className="px-8 py-2 mt-4 mr-4">Demo</button>
+          </a>
+
           <button className="px-8 py-2 mt-4">Code</button>
           {Myvid ? (
             <div className="border border-gray-600 sm:w-[90%] md:w-[55%] shadow shadow-gray-800 sm:h-[40vh] md:h-[40vh]  transition-all duration-500 z-10 absolute top-4 rounded-xl">
