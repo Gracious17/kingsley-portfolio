@@ -3,6 +3,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
+import IsChecked from "./colourful/IsChecked";
 const email = "mailto:kingsleygracious16@gmail.com";
 const linkedIn = "https://www.linkedin.com/in/gracious-kingsley";
 const gitHub = "https://github.com/Gracious17";
@@ -12,6 +13,7 @@ const Main = () => {
 
   return (
     <div id="home" className="-w-full h-screen text-center">
+      {/* <IsChecked /> */}
       <div className="max-w-[1240px w-full h-full mx-auto  p-2 flex justify-center items-center">
         <div>
           <div className="h-12 w-12 bg-[#5651e5] flex justify-center mx-auto rounded-full animate-bAndc -z-40">
