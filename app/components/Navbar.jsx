@@ -16,9 +16,7 @@ const Navbar = () => {
   };
   useEffect(() => {
     if (
-      pathname === "/property" ||
-      pathname === "/password" ||
-      pathname === "/cendrift"
+      pathname === "/agency" ||pathname === "/password" || pathname === "/cendrift"||pathname==="/hotelBooking" 
     ) {
       setNavBg("transparent");
       setLinkColor("#ecF0F3");

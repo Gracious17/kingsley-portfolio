@@ -3,6 +3,7 @@ import agencyImg from "../../public/assets/projects/agency.jpg";
 import ProjectItem from "./ProjectItem";
 import passwordGenImg from "../../public/assets/projects/password-gen.png";
 import CendriftImg from "../../public/assets/projects/cendrift.jpg";
+import HotelImg from "@/public/hotel-booking.png"
 import Link from "next/link";
 
  const projects=[
@@ -30,6 +31,14 @@ import Link from "next/link";
   projectUrl:"/cendrift"
 
 },
+{
+  id:4,
+  title:"Hospitality Management App",
+  stack:"Next Js Project",
+  backgroundImg:HotelImg,
+  projectUrl:"/hotelBooking"
+
+},
  
 ]
 const Projects = () => {
@@ -44,7 +53,7 @@ const Projects = () => {
         <div className="grid md:grid-cols-2 gap-4">
 
 
-        {projects.slice(0,3).map((project,index)=>{
+        {projects.slice(0,4).map((project,index)=>{
           return(
             <div key={index} >
           <ProjectItem
@@ -69,7 +78,7 @@ const Projects = () => {
           )
         })}
         </div>
-        {projects.length > 2 && 
+        {projects.length > 3 && 
         <div className="w-full items-center text-center justify-center pt-4">
           <Link href="/moreProjects" className="text-[#5651e5] hover:underline cursor-pointer">
           View More Projects
