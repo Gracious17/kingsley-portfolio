@@ -31,7 +31,10 @@ const HotelBooking = () => {
       </div>
       <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8">
         <div className="col-span-4">
-          <p>Project: FindPeace Company</p>
+          <p>Company: <strong>
+            FindPeace,
+            </strong> 
+             Hotel Booking App Project:</p>
           <h2>Overview</h2>
           <p>
             A fully responsive hotel booking application built with Next.js 15,
