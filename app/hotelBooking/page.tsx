@@ -34,7 +34,7 @@ const HotelBooking = () => {
           <p>Company: <strong>
             FindPeace,
             </strong> 
-             Hotel Booking App Project:</p>
+              Hotel Booking App Project:</p>
           <h2>Overview</h2>
           <p>
             A fully responsive hotel booking application built with Next.js 15,
