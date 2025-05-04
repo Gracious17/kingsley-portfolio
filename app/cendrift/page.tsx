@@ -11,7 +11,7 @@ const Cendrift = () => {
     setMyvid(!Myvid);
   };
   return (
-    <div className="w-full">
+    <div className="w-full dark:bg-black dark:text-white">
       <div className="w-screen h-[30vh] lg:h-[40vh] relative">
         {/* overlay */}
         <div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/80 z-10" />
@@ -61,27 +61,27 @@ const Cendrift = () => {
             </button>
           )}
         </div>
-        <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4">
+        <div className="col-span-4 md:col-span-1 shadow-xl dark:shadow-md dark:shadow-gray-400 shadow-gray-400 rounded-xl p-4">
           <div className="p-2">
             <p className="text-center font-bold pb-2">Technologies</p>
-            <div className="grid grid-cols-3 md:grid-cols-1">
-              <p className="text-gray-600 py-2 flex items-center ">
+            <div className="grid grid-cols-3 md:grid-cols-1 ">
+              <p className="text-gray-600 py-2 flex items-center dark:text-white">
                 <RiRadioButtonFill className="pr-1" /> React
               </p>
 
-              <p className="text-gray-600 py-2 flex items-center ">
+              <p className="text-gray-600 py-2 flex items-center dark:text-white">
                 <RiRadioButtonFill className="pr-1" /> Tailwind
               </p>
 
-              <p className="text-gray-600 py-2 flex items-center ">
+              <p className="text-gray-600 py-2 flex items-center dark:text-white">
                 <RiRadioButtonFill className="pr-1" /> Javascript
               </p>
 
-              <p className="text-gray-600 py-2 flex items-center ">
+              <p className="text-gray-600 py-2 flex items-center dark:text-white">
                 <RiRadioButtonFill className="pr-1" /> Firebase
               </p>
 
-              <p className="text-gray-600 py-2 flex items-center ">
+              <p className="text-gray-600 py-2 flex items-center dark:text-white">
                 <RiRadioButtonFill className="pr-1" /> Google api
               </p>
             </div>

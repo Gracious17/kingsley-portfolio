@@ -12,7 +12,7 @@ const HotelBooking = () => {
     setMyvid(!Myvid);
   };
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden dark:bg-black dark:text-white">
       <div className="w-screen h-[30vh] lg:h-[40vh] relative">
         {/* overlay */}
         <div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/80 z-10" />
@@ -64,33 +64,33 @@ const HotelBooking = () => {
             </button>
           )}
         </div>
-        <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4">
+        <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 dark:shadow-md dark:shadow-gray-400 rounded-xl p-4">
           <div className="p-2">
             <p className="text-center font-bold pb-2">Technologies</p>
             <div className="grid grid-cols-3 md:grid-cols-1">
-              <p className="text-gray-600 py-2 flex items-center ">
+              <p className="text-gray-600 py-2 flex items-center dark:text-white">
                 <RiRadioButtonFill className="pr-1" /> Next.Js
               </p>
 
-              <p className="text-gray-600 py-2 flex items-center ">
+              <p className="text-gray-600 py-2 flex items-center dark:text-white">
                 <RiRadioButtonFill className="pr-1" /> Tailwind CSS
               </p>
 
-              <p className="text-gray-600 py-2 flex items-center ">
+              <p className="text-gray-600 py-2 flex items-center dark:text-white">
                 <RiRadioButtonFill className="pr-1" /> Typescript
               </p>
 
-              <p className="text-gray-600 py-2 flex items-center ">
+              <p className="text-gray-600 py-2 flex items-center dark:text-white">
                 <RiRadioButtonFill className="pr-1" /> NextAuth
               </p>
-              <p className="text-gray-600 py-2 flex items-center ">
+              <p className="text-gray-600 py-2 flex items-center dark:text-white">
                 <RiRadioButtonFill className="pr-1" /> Zustand
               </p>
-              <p className="text-gray-600 py-2 flex items-center ">
+              <p className="text-gray-600 py-2 flex items-center dark:text-white">
                 <RiRadioButtonFill className="pr-1" /> Paystack
               </p>
 
-              <p className="text-gray-600 py-2 flex items-center ">
+              <p className="text-gray-600 py-2 flex items-center dark:text-white">
                 <RiRadioButtonFill className="pr-1" /> Google api
               </p>
             </div>
@@ -103,7 +103,7 @@ const HotelBooking = () => {
         <h2>Idea-To-Impact</h2>
 
         <details>
-          <summary className="font-bold text-black text-xl tracking-wide"> Problem</summary>
+          <summary className="font-bold text-black dark:text-white  text-xl tracking-wide"> Problem</summary>
           <h3 className="text-sm font-semibold">
             Hotel search platforms often lack clarity, real-time availability,
             and seamless payment flow, especially in growing markets. Users find
@@ -127,7 +127,7 @@ const HotelBooking = () => {
         </details>
 
         <details>
-          <summary className="font-bold text-black text-xl tracking-wide"> Solution</summary>
+          <summary className="font-bold text-black text-xl tracking-wide dark:text-white"> Solution</summary>
           <h3 className="text-sm font-semibold">
             Built a multi-page booking flow with the following features: :
           </h3>
@@ -160,7 +160,7 @@ const HotelBooking = () => {
         </details>
 
         <details>
-          <summary className="font-bold text-black text-xl tracking-wide">Challenges</summary>
+          <summary className="font-bold text-black text-xl tracking-wide dark:text-white">Challenges</summary>
           <ul>
             <li className="text-gray-600 py-2 flex items-center ">
               <IoRadioButtonOnOutline className="pr-1" />
@@ -177,7 +177,7 @@ const HotelBooking = () => {
           </ul>
         </details>
         <details>
-          <summary className="font-bold text-black text-xl tracking-wide">Results</summary>
+          <summary className="font-bold text-black text-xl tracking-wide dark:text-white">Results</summary>
           <ul>
             <li className="text-gray-600 py-2 flex items-center ">
               <IoRadioButtonOnOutline className="pr-1" />

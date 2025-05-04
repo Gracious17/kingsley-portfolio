@@ -5,6 +5,7 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { usePathname, useRouter } from "next/navigation";
+import ThemeToggle from './darkModeToggle/ThemeToggle'
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [shadow, setShadow] = useState(false);
@@ -37,14 +38,15 @@ const Navbar = () => {
   }, []);
   return (
     <div
-      style={{ background: `${navBg}` }}
+      // style={{ background: `${navBg}` }}
       className={
-        shadow
+        `${shadow
           ? "fixed w-full h-20 shadow-xl z-[100] "
           : "fixed w-full h-20  z-[100] "
-      }
+      
+          }  ${navBg==='transparent'?'bg-transparent':'bg-[#ecF0F3] dark:bg-black'}  `}
     >
-      <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
+      <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
         <Link href="/">
           <div>
             <h1 className="text-[#5651e5]">
@@ -53,7 +55,14 @@ const Navbar = () => {
             </h1>
           </div>
         </Link>
-        <div style={{ color: `${linkColor}` }}>
+        {/* darkMode */}
+        <div>
+          <ThemeToggle/>
+        </div>
+        <div 
+        // style={{ color: `${linkColor}` }} 
+        
+        className={`${navBg==='transparent'? 'text-[#ecF0F3]':'text-[#1f2937] dark:text-white'}`}>
           <ul className="hidden md:flex">
             <Link href="/">
               <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
@@ -75,7 +84,7 @@ const Navbar = () => {
               </li>
             </Link>
           </ul>
-          <div onClick={handleSideMenu} className="md:hidden">
+          <div onClick={handleSideMenu} className="md:hidden dark:text-white">
             <AiOutlineMenu size={25} />
           </div>
         </div>
@@ -90,7 +99,7 @@ const Navbar = () => {
         <div
           className={
             openMenu
-              ? `fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500`
+              ? `fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500 dark:bg-black dark:text-white`
               : `fixed left-[-100%] top-0  p-10 ease-in duration-500`
           }
         >

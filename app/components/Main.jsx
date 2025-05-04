@@ -12,7 +12,7 @@ const Main = () => {
   let day = new Date().getDay();
 
   return (
-    <div id="home" className="-w-full h-screen text-center">
+    <div id="home" className="-w-full h-screen text-center dark:bg-black dark:text-white">
       {/* <IsChecked /> */}
       <div className="max-w-[1240px w-full h-full mx-auto  p-2 flex justify-center items-center">
         <div>
@@ -30,24 +30,24 @@ const Main = () => {
               <h1 className="text-sm">Looking forward to the new Week🎉</h1>
             )}
           </div>
-          <p className=" uppercase tracking-widest text-sm text-gray-600">
+          <p className=" uppercase tracking-widest text-sm text-gray-600 dark:text-white">
             Let&apos;s build something together
           </p>
-          <h1 className="py-4 text-gray-700">
+          <h1 className="py-4 text-gray-700 dark:text-white">
             Hi, i&apos;m <span className="text-[#5451e5]">Kingsley</span>
           </h1>
-          <h1 className="py-2 text-gray-700">A Full-Stack Web Developer</h1>
-          <p className="py-4 text-gray-600 max-w-[70%] m-auto">
+          <h1 className="py-2 text-gray-700 dark:text-white">A Full-Stack Web Developer</h1>
+          <p className="py-4 text-gray-600 max-w-[70%] m-auto dark:text-white ">
             I&apos;m a full-stack web developer specializing in building (and
             occasionally designing ) exceptional digital experience. Currently,
             focusing on building the Do-Everything App,  (front-end web applications) and (backend services)
             
           </p>
-          <div className="flex items-center justify-between max-w-[330px] m-auto py-4 md:gap-6">
+          <div className="flex items-center justify-between max-w-[330px] m-auto py-4 md:gap-6 ">
             <div
               data-aos="fade-right"
               data-aos-delay="200"
-              className=" rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300 cursor-pointer"
+              className=" rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300 cursor-pointer "
             >
               <a href={linkedIn} target="_blank" rel="noopener noreferrer">
                 <FaLinkedin size={30} />
