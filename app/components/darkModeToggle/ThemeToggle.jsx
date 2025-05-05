@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { FaDesktop, FaMoon, FaSun } from "react-icons/fa";
-import { div } from "framer-motion/client";
+import { FaDesktop } from "react-icons/fa";
+import { Moon, Sun } from "lucide-react";
 
 const ThemeToggle = () => {
   const { theme, setTheme, systemTheme } = useTheme();
@@ -28,12 +28,12 @@ const ThemeToggle = () => {
     <div className="flex gap-4 items-center flex-col mt-20 ">
       {/* light mode button */}
       <button onClick={() => setTheme("light")} title="Light Mode">
-        <FaSun className={`text-xl ${currentTheme==='light'?'text-yellow-500':''}`}
+        <Sun className={`text-xl ${currentTheme==='light'?'text-yellow-500':''}`}
         />
       </button>
       {/* Dark Mode Button */}
       <button  onClick={()=>setTheme('dark')} title="Dark Mode">
-<FaMoon   className={`text-xl ${currentTheme==='dark'?'text-blue-400':''}`}/>
+<Moon   className={`text-xl ${currentTheme==='dark'?'text-gray-400':''}`}/>
       </button>
 
       {/* System mode button */}

@@ -19,7 +19,7 @@ const Skills = () => {
         <h2 className="py-4">What I can Do</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* HTML */}
-          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-gray-400">
+          <div className="p-4 shadow-xl sha rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-md dark:shadow-gray-400">
             <div className="grid grid-cols-2 justify-center items-center">
               <div data-aos="fade-up" className="m-auto">
                 <Image src={Html} alt="/" width={120} height={120} />
@@ -30,7 +30,7 @@ const Skills = () => {
             </div>
           </div>
           {/* CSS */}
-          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-gray-400 ">
+          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-md dark:shadow-gray-400 ">
             <div className="grid grid-cols-2 justify-center items-center">
               <div data-aos="fade-out" data-aos-delay="200" className="m-auto">
                 <Image src={Css} alt="/" width={120} height={120} />
@@ -41,7 +41,7 @@ const Skills = () => {
             </div>
           </div>
           {/* JAVASCRIPT */}
-          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-gray-400 ">
+          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-md dark:shadow-gray-400 ">
             <div className="grid grid-cols-2 justify-center items-center">
               <div data-aos="fade-up" className="m-auto">
                 <Image src={Javascript} alt="/" width={120} height={120} />
@@ -52,7 +52,7 @@ const Skills = () => {
             </div>
           </div>
           {/* REACTJS */}
-          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-gray-400">
+          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-md dark:shadow-gray-400">
             <div className="grid grid-cols-2 justify-center items-center">
               <div data-aos="fade-up" className="m-auto">
                 <Image src={react} alt="/" width={120} height={120} />
@@ -63,7 +63,7 @@ const Skills = () => {
             </div>
           </div>
           {/* TAILWIND CSS */}
-          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-gray-400">
+          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-md dark:shadow-gray-400">
             <div className="grid grid-cols-2 justify-center items-center">
               <div data-aos="fade-out" data-aos-delay="200" className="m-auto">
                 <Image src={Tailwind} alt="/" width={120} height={120} />
@@ -74,7 +74,7 @@ const Skills = () => {
             </div>
           </div>
           {/* NEXTJS */}
-          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-gray-400">
+          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-md dark:shadow-gray-400">
             <div className="grid grid-cols-2 justify-center items-center">
               <div data-aos="fade-out" className="m-auto">
                 <Image src={NextJs} alt="/" width={120} height={120}  className="dark:bg-white dark:rounded-full"/>
@@ -85,7 +85,7 @@ const Skills = () => {
             </div>
           </div>
           {/* GITHUB */}
-          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-gray-400">
+          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-md dark:shadow-gray-400">
             <div className="grid grid-cols-2 justify-center items-center">
               <div data-aos="fade-up" data-aos-delay="200" className="m-auto">
                 <Image src={Github} alt="/" width={120} height={120} className="dark:bg-white dark:rounded-full" />
@@ -96,7 +96,7 @@ const Skills = () => {
             </div>
           </div>
           {/* NODEJS */}
-          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-gray-400">
+          <div className="p-4 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:shadow-md dark:shadow-gray-400">
             <div className="grid grid-cols-2 justify-center items-center">
               <div data-aos="fade-out" className="m-auto">
                 <Image src={Nodejs} alt="/" width={120} height={120} />

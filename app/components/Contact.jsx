@@ -75,7 +75,7 @@ const Contact = () => {
         </h2>
         <div className="grid lg:grid-cols-5 gap-8">
           {/* left */}
-          <div className="col-span-3 lg:col-span-2 w-full shadow-xl shadow-gray-400 rounded-xl p-4">
+          <div className="col-span-3 lg:col-span-2 w-full shadow-xl shadow-gray-400 dark:shadow-md dark:shadow-gray-400 rounded-xl p-4">
             <div className="lg:p-4 h-full">
               <div data-aos="zoom-in" data-aos-delay="200">
                 <Image
@@ -137,7 +137,7 @@ const Contact = () => {
           </div>
           {/* right  */}
 
-          <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400  rounded-xl lg:-4">
+          <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 dark:shadow-md dark:shadow-gray-400  rounded-xl lg:-4">
             <div className="p-4">
 <AnimatePresence mode="wait">
   {status===STATUS.SUCCESS? (

@@ -4,6 +4,7 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import IsChecked from "./colourful/IsChecked";
+import AnimatedDarkBg from "./heroDark/AnimatedDarkBg"
 const email = "mailto:kingsleygracious16@gmail.com";
 const linkedIn = "https://www.linkedin.com/in/gracious-kingsley";
 const gitHub = "https://github.com/Gracious17";
@@ -12,11 +13,12 @@ const Main = () => {
   let day = new Date().getDay();
 
   return (
-    <div id="home" className="-w-full h-screen text-center dark:bg-black dark:text-white">
+    <div id="home" className="-w-full relative h-screen text-center dark:bg-black dark:text-white">
       {/* <IsChecked /> */}
+      <AnimatedDarkBg/>
       <div className="max-w-[1240px w-full h-full mx-auto  p-2 flex justify-center items-center">
         <div>
-          <div className="h-12 w-12 bg-[#5651e5] flex justify-center mx-auto rounded-full animate-bAndc -z-40">
+          <div className="h-12 w-12 dark:relative bg-[#5651e5] flex justify-center mx-auto rounded-full animate-bAndc -z-40">
             <span className="h-9 w-9 bg-yellow-200 rounded-full animate-spin">
               <span className="h-8 w-8 bg-white rounded-full animate-ping font-bold text-black">
                 fun

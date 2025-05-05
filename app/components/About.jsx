@@ -33,7 +33,7 @@ const About = () => {
         </div>
         <div
           data-aos="fade-in"
-          className="w-full group h-auto shadow-xl shadow-gray-400 rounded-xl flex items-center  justify-center p-4 hover:scale-105 ease-in duration-300"
+          className="w-full group h-auto shadow-xl shadow-gray-400 dark:shadow-md dark:shadow-gray-400 rounded-xl flex items-center  justify-center p-4 hover:scale-105 ease-in duration-300"
         >
           <Image
             src={AboutImg}
