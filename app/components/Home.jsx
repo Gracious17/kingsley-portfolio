@@ -2,12 +2,16 @@
 import React, { useEffect } from "react";
 import Main from "./Main";
 import About from "./About";
-import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from './Footer'
 import AOS from "aos";
+import Skills from "./Skills";
+import Review from "./Review"
 import "aos/dist/aos.css"; // You can also use <link> for styles
+
+
+
 
 const Home = () => {
   useEffect(() => {
@@ -23,11 +27,17 @@ const Home = () => {
       <Main />
       <About />
       <Skills />
+
+      <Review/>
       <Projects />
       <Contact />
       <Footer/>
+
+      
     </div>
   );
 };
+
+
 
 export default Home;

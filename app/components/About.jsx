@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import Image from "next/image";
 import AboutImg from "../../public/assets/about.jpg";
 import myImg from "../../public/assets/me2.png";
 import { FaArrowDown } from "react-icons/fa";
+import SectionHeaders from "./SectionHeaders"
 
 const About = () => {
   return (
@@ -11,7 +12,8 @@ const About = () => {
         {/* Text Section */}
         <div className="md:col-span-2 animate-fadeIn">
           <p className="uppercase tracking-widest text-xl text-[#5651e5] font-semibold mb-2">About</p>
-          <h2 className="py-2 text-3xl font-bold">Who I Am</h2>
+               {/* section Header  */}
+               <SectionHeaders header="Who I Am" />
           <p className="py-2 text-gray-600 dark:text-gray-200 text-lg">
             I am a motivated and passionate developer with over 3 years of experience building responsive user interfaces and robust backend services. My journey in tech is driven by curiosity and a love for innovation.
           </p>

@@ -9,6 +9,7 @@ import Tailwind from "../../public/assets/skill/tailwind.png";
 import NextJs from "../../public/assets/skill/nextjs.png";
 import Nodejs from "../../public/assets/skill/node.png";
 import Github from "../../public/assets/skill/github1.png";
+import SectionHeaders from "./SectionHeaders";
 
 const skills = [
   { name: "HTML", img: Html, alt: "HTML5 logo", level: 95 },
@@ -66,7 +67,7 @@ const Skills = () => {
     <section id="skills" className="w-full lg:h-screen p-2 dark:bg-black dark:text-white">
       <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5] font-semibold mb-2">Skills</p>
-        <h2 className="py-2 text-2xl md:text-3xl font-bold mb-6">What I Can Do</h2>
+<SectionHeaders header="What I Can Do"/>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {skills.map((skill, idx) => (
             <div
@@ -119,4 +120,8 @@ const Skills = () => {
 
 
 export default Skills;
+
+
+
+
 
