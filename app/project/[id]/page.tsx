@@ -17,6 +17,7 @@ export default function ProjectDetailPage({ params }: Props) {
   const [showVideo, setShowVideo] = useState(false);
 
   if (!project) return notFound();
+  
 
   return (
     <div className="w-full dark:bg-black dark:text-white">
