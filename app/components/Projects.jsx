@@ -1,47 +1,9 @@
 import React from "react";
-import agencyImg from "../../public/assets/projects/agency.jpg";
 import ProjectItem from "./ProjectItem";
-import passwordGenImg from "../../public/assets/projects/password-gen.png";
-import CendriftImg from "../../public/assets/projects/cendrift.jpg";
-import HotelImg from "@/public/hotel-booking.png"
 import Link from "next/link";
 import AnimatedDarkBg from "./heroDark/AnimatedDarkBg";
+import {projects} from "@/lib/data/projects"
 
- const projects=[
-  {
-    id:1,
-    title:"Agency Website",
-    stack:"Next Js Project",
-    backgroundImg:agencyImg,
-    projectUrl:"/agency"
-
- },
- {
-  id:2,
-  title:"Password Generator",
-  stack:"React Js Project",
-  backgroundImg:passwordGenImg,
-  projectUrl:"/password"
-
-},
-{
-  id:3,
-  title:"WhatsApp Automation Platform",
-  stack:"Next Js Project",
-  backgroundImg:CendriftImg,
-  projectUrl:"/cendrift"
-
-},
-{
-  id:4,
-  title:"Hospitality Management App",
-  stack:"Next Js Project",
-  backgroundImg:HotelImg,
-  projectUrl:"/hotelBooking"
-
-},
- 
-]
 const Projects = () => {
   return (
     <section id="projects" className="w-full relative dark:bg-black dark:text-white">
@@ -61,7 +23,7 @@ const Projects = () => {
                 title={project.title}
                 stack={project.stack}
                 backgroundImg={project.backgroundImg}
-                projectUrl={project.projectUrl}
+                projectUrl={`/project/${project.id}`}
               />
             </div>
           ))}
