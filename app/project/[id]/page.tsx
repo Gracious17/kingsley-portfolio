@@ -32,7 +32,7 @@ export default function ProjectDetailPage({ params }: Props) {
           priority
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-1/2 -translate-x-1/2 -translate-y-1/2 text-white z-20 p-2 animate-fadeInUp">
-          <h2 className="py-2 text-3xl md:text-4xl font-bold drop-shadow-lg">
+          <h2 className="py-2 text-[min(10vw,70px)] font-bold drop-shadow-lg">
             {project.title}
           </h2>
           <h3 className="text-lg md:text-xl font-semibold drop-shadow">
