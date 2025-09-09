@@ -8,8 +8,9 @@ import AnimatedDarkBg from "./heroDark/AnimatedDarkBg";
 const email = "mailto:kingsleygracious16@gmail.com";
 const linkedIn = "https://www.linkedin.com/in/gracious-kingsley";
 const gitHub = "https://github.com/Gracious17";
-import HeroHeader from "./HeroHeader"
+import HeroHeader from "./HeroHeader";
 import { SparklesText } from "./magicui/sparkles-text";
+import { Button } from "./ui/moving-border";
 const Main = () => {
   let day = new Date().getDay();
 
@@ -22,7 +23,6 @@ const Main = () => {
       <AnimatedDarkBg />
       <div className="max-w-[1240px w-full h-full mx-auto  p-2 flex justify-center items-center">
         <div>
-         
           <div className="m-auto w-40 text-neutral-400">
             {day >= 1 && day <= 5 ? (
               <h1 className="text-sm">Happy Weekday💻👷🏾</h1>
@@ -31,31 +31,33 @@ const Main = () => {
             )}
           </div>
           <SparklesText>
-
-
-
-          <p className=" uppercase tracking-widest text-sm text-gray-600 dark:text-white">
-            Let&apos;s build something together
-          </p>
+            <p className=" uppercase tracking-widest text-sm text-gray-600 dark:text-white">
+              Let&apos;s build something together
+            </p>
             {/* hero header  */}
-            <HeroHeader/>
-          <p className="py-4 text-gray-600 max-w-[70%] m-auto dark:text-white ">
-            I&apos;m a full-stack web developer specializing in building (and
-            occasionally designing ) exceptional digital experience. Currently,
-            focusing on building the Do-Everything App, (front-end web
-            applications) and (backend services)
-          </p>
+            <HeroHeader />
+            <p className="py-4 text-gray-600 max-w-[70%] m-auto dark:text-white ">
+              I&apos;m a full-stack web developer specializing in building (and
+              occasionally designing ) exceptional digital experience.
+              Currently, focusing on building the Do-Everything App, (front-end
+              web applications) and (backend services)
+            </p>
           </SparklesText>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4 md:gap-6 ">
-            <div
-              data-aos="fade-right"
-              data-aos-delay="200"
-              className=" rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300 cursor-pointer "
-            >
-              <a href={linkedIn} target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={30} />
-              </a>
-            </div>
+          
+
+
+          
+              <div
+                data-aos="fade-right"
+                data-aos-delay="200"
+                className=" rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300 cursor-pointer "
+              >
+                <a href={linkedIn} target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin size={30} />
+                </a>
+              </div>
+            
             <div
               data-aos="fade-right"
               className=" rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300 cursor-pointer"
@@ -82,6 +84,7 @@ const Main = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };
