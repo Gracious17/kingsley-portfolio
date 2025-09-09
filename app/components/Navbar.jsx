@@ -94,12 +94,12 @@ const Navbar = () => {
           ? "fixed w-full h-20 shadow-xl z-[100] "
           : "fixed w-full h-20  z-[100] "
       
-          }  ${navBg==='transparent'?'bg-transparent':'bg-[#ecF0F3] dark:bg-black'}  `}
+          }  ${navBg==='transparent'?'bg-transparent':'bg-white dark:bg-black'}  `}
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
         <Link href="/" aria-label="Home" className="focus:outline-none">
           <div>
-            <h1 className="text-[#5651e5] font-bold text-xl tracking-tight">
+            <h1 className="text-[#5651e5] font-bold text-2xl tracking-tight">
               G<sub>r</sub>
               <sup className="underline ">acious</sup>
             </h1>
@@ -147,7 +147,7 @@ const Navbar = () => {
             </ul>
             <button
               onClick={handleSideMenu}
-              className="md:hidden dark:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5651e5]"
+              className="md:hidden dark:text-white"
               aria-label="Open menu"
               aria-controls="mobile-menu"
               aria-expanded={openMenu}
@@ -172,7 +172,7 @@ const Navbar = () => {
           id="mobile-menu"
           className={
             openMenu
-              ? `fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500 dark:bg-black dark:text-white z-[201] focus:outline-none`
+              ? `fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen  p-10 ease-in duration-500 dark:bg-black dark:text-white z-[201] focus:outline-none`
               : `fixed left-[-100%] top-0  p-10 ease-in duration-500`
           }
           role="dialog"
@@ -180,14 +180,14 @@ const Navbar = () => {
         >
           <div className="flex w-full items-center justify-between">
             <Link href="/" aria-label="Home" onClick={() => setOpenMenu(false)}>
-              <h1 className="text-[#5651e5] font-bold text-xl tracking-tight">
+              <h1 className="text-[#5651e5] font-bold text-2xl tracking-tight">
                 G<sub>r</sub>
                 <sup className="underline ">acious</sup>
               </h1>
             </Link>
             <button
               onClick={handleSideMenu}
-              className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5651e5]"
+              className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer focus:outline-none "
               aria-label="Close menu"
             >
               <AiOutlineClose size={25} />
@@ -214,25 +214,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <div className="pt-20">
-              <p className="uppercase tracking-widest text-[#5651e5] mb-4">
-                Let&apos;s Connect
-              </p>
-              <div className="flex items-center gap-4 flex-wrap">
-                {socialLinks.map(({ href, icon, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="rounded-full shadow-lg shadow-gray-400 p-3 hover:scale-110 transition-transform duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5651e5]"
-                  >
-                    {icon}
-                  </a>
-                ))}
-              </div>
-            </div>
+           
           </div>
         </aside>
       </div>

@@ -14,44 +14,8 @@ const config: Config = {
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
   		},
   		keyframes: {
-  			bAndc: {
-  				'0% ': {
-  					transform: 'translate(0,10vw)',
-  					backgroundColor: '#5651e5'
-  				},
-  				'25%': {
-  					transform: 'translate(100v,0)',
-  					backgroundColor: 'transparent'
-  				},
-  				'50%': {
-  					transform: 'translate(0,450vh)',
-  					backgroundColor: 'transparent'
-  				},
-  				'75%': {
-  					transform: 'translate(0,100vh)',
-  					backgroundColor: 'transparent'
-  				},
-  				'100%': {
-  					transform: 'translate(0,0)',
-  					backgroundColor: '#FFFF00'
-  				}
-  			},
-  			glideX: {
-  				'0%': {
-  					transform: 'translateX(100%)'
-  				},
-  				'100%': {
-  					transform: 'translateX(-100%)'
-  				}
-  			},
-  			glideY: {
-  				'0%': {
-  					transform: 'translateY(100%)'
-  				},
-  				'100%': {
-  					transform: 'translateY(-100%)'
-  				}
-  			},
+  			
+  		
 
 			marquee: {
           from: { transform: "translateX(0)" },

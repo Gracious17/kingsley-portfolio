@@ -69,15 +69,15 @@ const Contact = () => {
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5] font-semibold mb-2">Contact</p>
         <h2 className="py-2 text-2xl md:text-3xl font-bold mb-2">Get in Touch</h2>
-        <p className="mb-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-center text-base">I&apos;m available for contracts or full-time positions. Feel free to reach out via the form or connect with me on social media!</p>
+        <p className="mb-8  max-w-2xl mx-auto text-center text-base">I&apos;m available for contracts or full-time positions. Feel free to reach out via the form or connect with me on social media!</p>
   <div className="grid lg:grid-cols-5 gap-8">
           {/* left */}
           <div
-            className="col-span-3 lg:col-span-2 w-full rounded-2xl bg-white/60 dark:bg-gray-900/80 shadow-xl dark:shadow-gray-800 border border-gray-200 dark:border-gray-700 backdrop-blur-md p-4 animate-fadeInUp"
+            className="col-span-3 lg:col-span-2 w-full rounded-2xl   shadow-xl dark:shadow-gray-800 border border-gray-200 dark:border-gray-700 backdrop-blur-md p-4 animate-fadeInUp"
             data-aos="fade-right"
             data-aos-delay="100"
           >
-            <div className="lg:p-4 h-full flex flex-col justify-between">
+            <div className="lg:p-4 h-full flex flex-col  justify-between">
               <div className="mb-4" data-aos="zoom-in" data-aos-delay="200">
                 <Image
                   className="rounded-xl hover:scale-105 transition-transform duration-300"
@@ -106,7 +106,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
                     title="LinkedIn"
-                    className="rounded-full shadow-lg shadow-gray-400 p-4 bg-white/80 dark:bg-gray-900/80 hover:scale-110 hover:shadow-[#5651e5]/40 hover:bg-[#5651e5] hover:text-white dark:hover:bg-[#5651e5] dark:hover:text-white transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5651e5]"
+                    className="rounded-full shadow-lg shadow-gray-400 p-4 bg-white/80 dark:bg-white hover:scale-110 hover:shadow-[#5651e5]/40 hover:bg-[#5651e5] hover:text-white dark:hover:bg-[#5651e5] dark:hover:text-white transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5651e5]"
                   >
                     <FaLinkedin size={26} />
                   </a>
@@ -118,7 +118,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     aria-label="GitHub"
                     title="GitHub"
-                    className="rounded-full shadow-lg shadow-gray-400 p-4 bg-white/80 dark:bg-gray-900/80 hover:scale-110 hover:shadow-[#5651e5]/40 hover:bg-[#5651e5] hover:text-white dark:hover:bg-[#5651e5] dark:hover:text-white transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5651e5]"
+                    className="rounded-full shadow-lg shadow-gray-400 p-4 bg-white/80 dark:bg-white hover:scale-110 hover:shadow-[#5651e5]/40 hover:bg-[#5651e5] hover:text-white dark:hover:bg-[#5651e5] dark:hover:text-white transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5651e5]"
                   >
                     <FaGithub size={26} />
                   </a>
@@ -128,7 +128,7 @@ const Contact = () => {
                     href={email}
                     aria-label="Email"
                     title="Email"
-                    className="rounded-full shadow-lg shadow-gray-400 p-4 bg-white/80 dark:bg-gray-900/80 hover:scale-110 hover:shadow-[#5651e5]/40 hover:bg-[#5651e5] hover:text-white dark:hover:bg-[#5651e5] dark:hover:text-white transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5651e5]"
+                    className="rounded-full shadow-lg shadow-gray-400 p-4 bg-white/80 dark:bg-white hover:scale-110 hover:shadow-[#5651e5]/40 hover:bg-[#5651e5] hover:text-white dark:hover:bg-[#5651e5] dark:hover:text-white transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5651e5]"
                   >
                     <AiOutlineMail size={26} />
                   </a>
@@ -138,7 +138,7 @@ const Contact = () => {
                     href="#contact"
                     aria-label="Contact"
                     title="Contact"
-                    className="rounded-full shadow-lg shadow-gray-400 p-4 bg-white/80 dark:bg-gray-900/80 hover:scale-110 hover:shadow-[#5651e5]/40 hover:bg-[#5651e5] hover:text-white dark:hover:bg-[#5651e5] dark:hover:text-white transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5651e5]"
+                    className="rounded-full shadow-lg shadow-gray-400 p-4 bg-white/80 dark:bg-white hover:scale-110 hover:shadow-[#5651e5]/40 hover:bg-[#5651e5] hover:text-white dark:hover:bg-[#5651e5] dark:hover:text-white transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5651e5]"
                   >
                     <BsFillPersonLinesFill size={26} />
                   </a>
@@ -148,7 +148,7 @@ const Contact = () => {
           </div>
           {/* right  */}
           <div
-            className="col-span-3 w-full h-auto rounded-2xl bg-white/60 dark:bg-gray-900/80 shadow-xl dark:shadow-gray-800 border border-gray-200 dark:border-gray-700 backdrop-blur-md animate-fadeInUp"
+            className="col-span-3 w-full h-auto rounded-2xl  shadow-xl border-2 border-gray-200 dark:border-gray-700 backdrop-blur-md animate-fadeInUp"
             data-aos="fade-left"
             data-aos-delay="200"
           >

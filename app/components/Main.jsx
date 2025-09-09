@@ -16,19 +16,13 @@ const Main = () => {
   return (
     <div
       id="home"
-      className="-w-full relative h-screen text-center dark:bg-black dark:text-white"
+      className="w-full relative h-screen text-center dark:bg-black dark:text-white pt-12"
     >
       {/* <IsChecked /> */}
       <AnimatedDarkBg />
       <div className="max-w-[1240px w-full h-full mx-auto  p-2 flex justify-center items-center">
         <div>
-          <div className="h-12 w-12 dark:relative bg-[#5651e5] flex justify-center mx-auto rounded-full animate-bAndc -z-40">
-            <span className="h-9 w-9 bg-yellow-200 rounded-full animate-spin">
-              <span className="h-8 w-8 bg-white rounded-full animate-ping font-bold text-black">
-                fun
-              </span>
-            </span>
-          </div>
+         
           <div className="m-auto w-40 text-neutral-400">
             {day >= 1 && day <= 5 ? (
               <h1 className="text-sm">Happy Weekday💻👷🏾</h1>
