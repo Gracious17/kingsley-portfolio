@@ -55,7 +55,7 @@ const Skills = () => {
         Very Familiar with these tools .
       </p>
       {skills.map((item) => (
-        <DraggableCardBody className={`${item.className} `}
+        <DraggableCardBody key={item.name} className={`${item.className} `}
       aria-label={item.name}
          style={{ outline: 'none' }}>
           <Image
