@@ -7,14 +7,30 @@ html {
 }
 
 @layer base {
+  /* Color variables from Figma design */
+  :root {
+    --primary-purple: #a362ff;
+    --primary-purple-dark: #9857d3;
+    --dark-bg: #1a0b2e;
+    --dark-bg-secondary: #130428;
+    --dark-bg-tertiary: #251043;
+    --text-primary: #ffffff;
+    --text-secondary: #ccd6f6;
+    --text-muted: #8892b0;
+    --accent-purple: #5651e5;
+    --gradient-start: #130428;
+    --gradient-mid: #251043;
+    --gradient-end: #38126d;
+  }
+
   /* Global resets */
   * {
     @apply border-border;
   }
 
   body {
-    /* Use shadcn variables but keep your tracking */
     @apply bg-background text-foreground tracking-wide;
+    background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-bg-secondary) 50%, var(--dark-bg) 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -39,5 +55,119 @@ html {
   }
 }
 
+/* Custom typography utilities */
+@utility hero-title {
+  font-family: var(--font-preahvihear), sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
 
+@utility hero-subtitle {
+  font-family: var(--font-preahvihear), sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: 0.42px;
+  color: var(--text-primary);
+}
 
+@utility section-title {
+  font-family: var(--font-preahvihear), sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  color: var(--text-primary);
+}
+
+@utility card-title {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 32.5px;
+  color: var(--text-primary);
+}
+
+@utility card-description {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 10.5px;
+  color: var(--text-primary);
+}
+
+@utility project-title {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.68px;
+  color: var(--text-secondary);
+}
+
+@utility project-description {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Gradient utilities */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}

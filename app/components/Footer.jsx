@@ -1,43 +1,49 @@
 import React from 'react'
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-
+import InstagramIcon from './icons/InstagramIcon';
+import DribbbleIcon from './icons/DribbbleIcon';
+import GitHubIcon from './icons/GitHubIcon';
 
 const Footer = () => {
   return (
-    <footer className="w-full py-6 flex flex-col items-center justify-center border-t border-[#5651e5]/40 bg-white dark:bg-black dark:text-white shadow-lg shadow-gray-200 dark:shadow-gray-900">
-      <div className="flex items-center gap-4 mb-2">
+    <footer className="w-full py-6 flex flex-col items-center justify-center border-t border-purple-500/20 bg-[#1a0b2e] text-white shadow-lg shadow-purple-900/50">
+      <div className="flex items-center gap-6 mb-4">
         <a
-          href="https://www.linkedin.com/in/gracious-kingsley"
+          href="https://www.instagram.com"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          className="hover:text-[#5651e5] transition-colors"
+          aria-label="Instagram"
+          className="hover:scale-110 transition-transform duration-200"
         >
-          <FaLinkedin size={22} />
+          <InstagramIcon width={18} height={18} color="#ffffff" />
+        </a>
+        <a
+          href="https://dribbble.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Dribbble"
+          className="hover:scale-110 transition-transform duration-200"
+        >
+          <DribbbleIcon width={18} height={18} color="#ffffff" />
         </a>
         <a
           href="https://github.com/Gracious17"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
-          className="hover:text-[#5651e5] transition-colors"
+          className="hover:scale-110 transition-transform duration-200"
         >
-          <FaGithub size={22} />
-        </a>
-        <a
-          href="mailto:kingsleygracious16@gmail.com"
-          aria-label="Email"
-          className="hover:text-[#5651e5] transition-colors"
-        >
-          <FaEnvelope size={22} />
+          <GitHubIcon width={18} height={18} color="#ffffff" />
         </a>
       </div>
-      <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">
-        &copy; {new Date().getFullYear()} Kingsley Gracious. All rights reserved.
+      <p className="text-sm text-white/80 mb-2">
+        I'm currently looking to join a cross-functional team that values improving people's lives
+      </p>
+      <p className="text-sm text-white/80 mb-2">
+        through accessible design. or have a project in mind? Let's connect.
       </p>
       <a
         href="mailto:kingsleygracious16@gmail.com"
-        className="text-xs text-[#5651e5] hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5651e5]"
+        className="text-sm text-white/90 hover:text-[#a362ff] hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a362ff] transition-colors"
       >
         kingsleygracious16@gmail.com
       </a>

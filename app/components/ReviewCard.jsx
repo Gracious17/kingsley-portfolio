@@ -8,26 +8,32 @@ const ReviewCard = ({
   body,
 }) => {
   return (
-    <figure
-      className={cn( 
-        " animate-[var(--animate-marquee)] relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        // light styles
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-      )}
+    <div className="relative h-full w-64">
+      {/* Animated border container */}
+      <div className="absolute inset-0 rounded-xl overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#9857d3]/30 via-[#ccd6f6]/50 to-[#9857d3]/30 animate-[pulse_3s_ease-in-out_infinite]"></div>
+      </div>
+      
+      {/* Card content */}
+      <figure
+        className={cn( 
+          "animate-[var(--animate-marquee)] relative h-full w-full cursor-pointer overflow-hidden rounded-xl p-4 z-10",
+          "border border-[#9857d3]/30 bg-gray-950/[.05] backdrop-blur-sm",
+          "dark:bg-gray-50/[.05]",
+        )}
     >
       <div className="flex flex-row items-center gap-2">
         <img className="rounded-full" width="32" height="32" alt="" src={img} />
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
+          <figcaption className="text-sm font-medium text-[#ccd6f6]">
             {name}
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+          <p className="text-xs font-medium text-[#ccd6f6]/70">{username}</p>
         </div>
       </div>
-      <blockquote className="mt-2 text-xs">{body}</blockquote>
+      <blockquote className="mt-2 text-sm font-medium text-[#ccd6f6]">{body}</blockquote>
     </figure>
+    </div>
   );
 };
 export default ReviewCard

@@ -46,27 +46,29 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="w-full lg:h-screen p-2 dark:bg-black dark:text-white">
-<SectionHeaders header="What I Can Do"/>
-        <DraggableCardContainer
-      className="relative flex h-[600px] w-full items-center justify-center overflow-clip rounded-full">
-      <p
-        className="absolute top-1/2 mx-auto max-w-sm -translate-y-3/4 text-center text-2xl font-black text-neutral-400 md:text-4xl dark:text-neutral-800">
-        Very Familiar with these tools .
-      </p>
+    <section id="skills" className="w-full lg:min-h-screen p-2 bg-[#1a0b2e] text-white py-24 lg:py-32">
+      <div className="text-center mb-16">
+        <SectionHeaders header="What I Can Do"/>
+      </div>
+      <DraggableCardContainer
+        className="relative flex h-[600px] lg:h-[700px] w-full items-center justify-center overflow-clip rounded-full">
+        <p
+          className="absolute top-1/2 mx-auto max-w-sm -translate-y-3/4 text-center text-xl sm:text-2xl lg:text-3xl font-['Preahvihear'] font-normal text-white/60">
+          Very Familiar with these tools.
+        </p>
       {skills.map((item) => (
         <DraggableCardBody key={item.name} className={`${item.className} `}
       aria-label={item.name}
          style={{ outline: 'none' }}>
           <Image
-                 src={item.img}
-                 alt={item.alt}
-              width={80}
-               height={80}
-            className="pointer-events-none relative z-10 h-30 w-30 object-cover mx-auto"
-            />
+            src={item.img}
+            alt={item.alt}
+            width={100}
+            height={100}
+            className="pointer-events-none relative z-10 h-24 w-24 lg:h-28 lg:w-28 object-cover mx-auto"
+          />
           <h3
-            className="mt-4 text-center text-2xl font-bold text-neutral-700 dark:text-neutral-300">
+            className="mt-4 text-center text-xl lg:text-2xl font-['Poppins'] font-semibold text-white">
             {item.name}
           </h3>
         </DraggableCardBody>

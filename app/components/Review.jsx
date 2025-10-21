@@ -48,15 +48,17 @@ const secondRow = reviews.slice(reviews.length / 2);
 
 export function Review() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden  animate-[var(--animate-marquee)]">
-      <SectionHeaders header="Reviews" />
-      <p className="text-xl tracking-widest uppercase text-[#5651e5] font-semibold mb-2">What Clients Say</p>
-      <Marquee pauseOnHover className="[--duration:20s]">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-[#1a0b2e] py-24 lg:py-32 animate-[var(--animate-marquee)]">
+      <div className="text-center mb-12">
+        <SectionHeaders header="Reviews" />
+        <p className="text-lg sm:text-xl tracking-widest uppercase text-[#a362ff] font-['Poppins'] font-semibold mt-4">What Clients Say</p>
+      </div>
+      <Marquee pauseOnHover className="[--duration:25s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
+      <Marquee reverse pauseOnHover className="[--duration:25s] mt-4">
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}

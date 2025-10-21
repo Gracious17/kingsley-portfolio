@@ -32,10 +32,9 @@ export function About() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <section id="about">
-      <div className="ml-4">
-        <p className="uppercase tracking-widest text-xl text-[#5651e5] font-semibold mb-2">
-          {" "}
+    <section id="about" className="bg-[#1a0b2e] py-24 lg:py-32">
+      <div className="text-center mb-16 px-4">
+        <p className="uppercase tracking-widest text-lg sm:text-xl text-[#a362ff] font-['Poppins'] font-semibold mb-4">
           About
         </p>
         <SectionHeaders header="Who I Am" />
@@ -112,7 +111,7 @@ export function About() {
                     exit={{ opacity: 0 }}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-[#5651e5] text-white"
+                    className="px-4 py-3 text-sm rounded-full font-bold bg-[#a362ff] text-white"
                   >
                     {active.ctaText}
                   </motion.a>
@@ -135,7 +134,7 @@ export function About() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
+      <ul className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-8 px-4">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
@@ -217,36 +216,28 @@ const cards = [
     ctaLink: "https://www.linkedin.com/in/gracious-kingsley",
     content: () => {
       return (
-        <p>
-          I am a motivated and passionate developer with over 3 years of
+        <p className=" ">
+          I am a motivated and passionate developer with over 4 years of
           experience building responsive user interfaces and robust backend
           services. My journey in tech is driven by curiosity and a love for
           innovation.
-          <br /> <br />I thrive on solving complex problems and creating
+          {/* <br /> <br />I thrive on solving complex problems and creating
           products that make a difference. My approach combines creativity,
-          attention to detail, and a commitment to continuous learning.
+          attention to detail, and a commitment to continuous learning. */}
         </p>
       );
     },
   },
   {
-    description: "Partner",
-    title: "my laptop",
+    description: "Process & Tools",
+    title: "How I Work",
     src: AboutImg,
     ctaText: "Contact Now",
     ctaLink: "https://www.linkedin.com/in/gracious-kingsley",
     content: () => {
       return (
         <p>
-          Full-time problem solver, part-time feature creator. I work closely
-          with my laptop — sometimes in harmony, sometimes in conflict — to
-          transform ideas into working products. What often starts as a simple
-          task can turn into a late-night debugging session, but that&apos;s
-          part of the craft. I believe every bug is an opportunity to learn.
-          <br />
-          <br />
-          every challenge is a chance to innovate, and every line of code is a
-          step toward building solutions that make life easier
+          I move from idea to delivery with focus: scoping, iterative development, and rigorous testing. I rely on modern tooling and automation to keep quality high and velocity strong. Every bug is an opportunity to learn; every feature is a chance to improve.
         </p>
       );
     },
