@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import { Inter, Preahvihear, Plus_Jakarta_Sans, Poppins } from "next/font/google";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import "./globals.css";
 import Navbar from "../app/components/Navbar";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "next-themes";
-
+import ExitIntentWrapper from "./components/exitshow/ExitIntentWrapper"
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const preahvihear = Preahvihear({ subsets: ["latin"], weight: "400", variable: "--font-preahvihear" });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: "600", variable: "--font-plus-jakarta" });
 const poppins = Poppins({ subsets: ["latin"], weight: ["500", "600"], variable: "--font-poppins" });
 
 // Exit intent wrapper should only run on client and not block SSR
-const ExitIntentWrapper = dynamic(() => import("./components/exitshow/ExitIntentWrapper"), { ssr: false });
+// const ExitIntentWrapper = dynamic(() => import("./components/exitshow/ExitIntentWrapper"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "kingsley | portfolio",

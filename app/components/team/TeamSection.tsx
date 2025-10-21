@@ -47,7 +47,7 @@ const TeamSection = () => {
           className="mb-16"
         >
           <p className="text-xl sm:text-2xl lg:text-3xl font-['Preahvihear'] text-white/90 mb-3 leading-relaxed">
-            I'm currently looking to join a{" "}
+            I&apos;m currently looking to join a{" "}
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -60,7 +60,7 @@ const TeamSection = () => {
             team
           </p>
           <p className="text-xl sm:text-2xl lg:text-3xl font-['Preahvihear'] text-white/90 leading-relaxed">
-            that values improving people's lives through accessible design
+            that values improving people&apos;s lives through accessible design
           </p>
         </motion.div>
 

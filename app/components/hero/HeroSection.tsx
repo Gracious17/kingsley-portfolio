@@ -111,11 +111,11 @@ const HeroSection = () => {
               className="space-y-4 pt-4"
             >
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-['Preahvihear'] font-normal text-white">
-                I'm a Software Engineer.|
+                I&apos;m a Software Engineer.|
               </h2>
               
               <p className="text-lg sm:text-xl font-['Preahvihear'] text-white/90 flex items-center justify-center lg:justify-start gap-2 flex-wrap">
-                Currently, I'm a Software Engineer at
+                Currently, I&apos;m a Software Engineer at
                 <span className="inline-flex items-center gap-1.5">
                   {/* <Image
                     src="/assets/facebook-icon.png"
