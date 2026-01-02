@@ -31,6 +31,7 @@ const Projects = () => {
                 stack={project.stack}
                 backgroundImg={project.backgroundImg}
                 projectUrl={`/project/${project.id}`}
+                technologies={project.technologies}
               />
 </motion.div>
           ))}

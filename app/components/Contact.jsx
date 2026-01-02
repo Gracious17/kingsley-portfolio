@@ -9,6 +9,7 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi2";
 import Link from "next/link";
 import SuccessMessage from "./SuccessMessage";
+import { sendEmail, getErrorMessage, initializeEmailJS } from "../../lib/emailjs-service";
 const email = "mailto:kingsleygracious16@gmail.com";
 const linkedIn = "https://www.linkedin.com/in/gracious-kingsley";
 const gitHub = "https://github.com/Gracious17";
@@ -26,7 +27,8 @@ const Contact = () => {
         subject: "",
         message: "",
     });
-     const [status, setStatus] = useState(STATUS.IDLE);
+    const [status, setStatus] = useState(STATUS.IDLE);
+    const [errorMessage, setErrorMessage] = useState("");
 
 
     const handleChange = (e) => {
@@ -37,23 +39,23 @@ const Contact = () => {
     }
     const handleSubmit = async (e) => {
       e.preventDefault();
-      setStatus("loading");
+      setStatus(STATUS.LOADING);
+      setErrorMessage("");
       
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
-        if (response.ok) {
-          setStatus("success");
-    
-        } else {
-          setStatus("error");
-        }
-      
-      };
+      try {
+        // Initialize EmailJS if not already done
+        initializeEmailJS();
+        
+        // Send email using EmailJS
+        await sendEmail(formData);
+        
+        setStatus(STATUS.SUCCESS);
+      } catch (error) {
+        console.error('Email sending failed:', error);
+        setStatus(STATUS.ERROR);
+        setErrorMessage(getErrorMessage(error));
+      }
+    };
       const resetForm = () => {
        setFormData({
          name: "",
@@ -63,6 +65,7 @@ const Contact = () => {
          message: "",
        });
        setStatus(STATUS.IDLE);
+       setErrorMessage("");
    }
   return (
     <section id="contact" className="w-full bg-[#1a0b2e] text-white py-24 lg:py-32 relative overflow-hidden">
@@ -304,7 +307,7 @@ const Contact = () => {
                       )}
                     </motion.button>
                     {status === STATUS.ERROR && (
-                      <p className="text-red-500 text-sm mt-2">Something went wrong. Please try again.</p>
+                      <p className="text-red-500 text-sm mt-2">{errorMessage || "Something went wrong. Please try again."}</p>
                     )}
                   </form>
                 )}
