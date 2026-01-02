@@ -1,4 +1,5 @@
-"use client";
+// BACKUP: Original Navbar component - renamed to avoid conflicts
+// This is your original navbar component, kept as backup
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
