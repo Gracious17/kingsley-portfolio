@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import HeroSection from "./hero/HeroSection";
 
 // Defer below-the-fold sections to reduce initial client bundle and avoid SSR issues
-const WorkExperience = dynamic(() => import("./experience/WorkExperience"), { ssr: false });
+const GlobalNetwork = dynamic(() => import("./experience/GlobalNetwork"), { ssr: false });
 const TeamSection = dynamic(() => import("./team/TeamSection"), { ssr: false });
 const FeaturedProjects = dynamic(() => import("./projects/FeaturedProjects"), { ssr: false });
 const About = dynamic(() => import("./About"), { ssr: false });
@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className="overflow-hidden bg-[#1a0b2e]">
       <HeroSection />
-      <WorkExperience />
+      <GlobalNetwork />
       <TeamSection />
       <FeaturedProjects />
       <About />
