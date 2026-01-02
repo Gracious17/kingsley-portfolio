@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 const HeroSection = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [displayText, setDisplayText] = useState("");
-  const fullText = "I&apos;m a Software Engineer.";
+  const fullText = "I'm a Software Engineer.";
   
   // Mouse tracking for avatar interaction
   const mouseX = useMotionValue(0);
@@ -264,7 +264,7 @@ const HeroSection = () => {
                     </motion.span>
                   </>
                 ) : (
-                  <span className="opacity-0">I&apos;m a Software Engineer.</span>
+                  <span className="opacity-0">{"I'm a Software Engineer."}</span>
                 )}
               </h2>
               
