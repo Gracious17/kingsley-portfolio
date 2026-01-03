@@ -139,6 +139,7 @@ export default function ExpandableCardDemo() {
                   height={100}
                   src={card.src}
                   alt={card.title}
+                  loading="lazy"
                   className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
                 />
               </motion.div>

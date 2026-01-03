@@ -10,15 +10,15 @@ const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
   const fullText = "I'm a Software Engineer.";
   
-  // Mouse tracking for avatar interaction
+  // Mouse tracking for avatar interaction - Optimized with debouncing
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
-  const springX = useSpring(mouseX, { stiffness: 150, damping: 15 });
-  const springY = useSpring(mouseY, { stiffness: 150, damping: 15 });
+  const springX = useSpring(mouseX, { stiffness: 100, damping: 20 }); // Reduced stiffness for better performance
+  const springY = useSpring(mouseY, { stiffness: 100, damping: 20 });
   
-  const rotateX = useTransform(springY, [-300, 300], [10, -10]);
-  const rotateY = useTransform(springX, [-300, 300], [-10, 10]);
+  const rotateX = useTransform(springY, [-300, 300], [5, -5]); // Reduced rotation range
+  const rotateY = useTransform(springX, [-300, 300], [-5, 5]);
 
   // Typing animation effect
   useEffect(() => {
@@ -52,10 +52,10 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#1a0b2e] pt-20 pb-16">
-      {/* Animated Background Particles */}
+      {/* Animated Background Particles - Reduced from 6 to 3 for performance */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Floating particles */}
-        {[...Array(6)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-purple-400/30 rounded-full"
@@ -71,8 +71,8 @@ const HeroSection = () => {
               delay: i * 0.5,
             }}
             style={{
-              left: `${20 + i * 15}%`,
-              top: `${30 + i * 10}%`,
+              left: `${20 + i * 25}%`,
+              top: `${30 + i * 15}%`,
             }}
           />
         ))}
@@ -138,17 +138,20 @@ const HeroSection = () => {
                   alt="Developer avatar"
                   width={350}
                   height={400}
-                  className="w-full h-auto max-w-[280px] lg:max-w-[350px] mx-auto drop-shadow-2xl"
+                  className="w-full h-auto max-w-[280px] lg:max-w-[350px] mx-auto "
                   priority
+                  quality={85}
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWEwYjJlIi8+PC9zdmc+"
                 />
                 
-                {/* Hover sparkles */}
+                {/* Hover sparkles - Reduced from 3 to 2 for performance */}
                 <motion.div
                   className="absolute inset-0 pointer-events-none"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                 >
-                  {[...Array(3)].map((_, i) => (
+                  {[...Array(2)].map((_, i) => (
                     <motion.div
                       key={i}
                       className="absolute w-1 h-1 bg-yellow-400 rounded-full"
@@ -159,11 +162,11 @@ const HeroSection = () => {
                       transition={{
                         duration: 1.5,
                         repeat: Infinity,
-                        delay: i * 0.3,
+                        delay: i * 0.5,
                       }}
                       style={{
-                        left: `${30 + i * 20}%`,
-                        top: `${20 + i * 15}%`,
+                        left: `${30 + i * 30}%`,
+                        top: `${20 + i * 20}%`,
                       }}
                     />
                   ))}

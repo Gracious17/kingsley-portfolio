@@ -35,12 +35,7 @@ const Footer = () => {
           <GitHubIcon width={18} height={18} color="#ffffff" />
         </a>
       </div>
-      <p className="text-sm text-white/80 mb-2">
-        I&apos;m currently looking to join a cross-functional team that values improving people&apos;s lives
-      </p>
-      <p className="text-sm text-white/80 mb-2">
-        through accessible design. or have a project in mind? Let&apos;s connect.
-      </p>
+     
       <a
         href="mailto:kingsleygracious16@gmail.com"
         className="text-sm text-white/90 hover:text-[#a362ff] hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a362ff] transition-colors"

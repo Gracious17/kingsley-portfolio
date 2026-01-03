@@ -6,6 +6,7 @@ import TubelightNavbar from "../app/components/TubelightNavbar";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "next-themes";
 import ExitIntentWrapper from "@/app/components/exitShow/ExitIntentWrapper"
+import PerformanceMonitor from "@/app/components/ui/PerformanceMonitor";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const preahvihear = Preahvihear({ subsets: ["latin"], weight: "400", variable: "--font-preahvihear" });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: "600", variable: "--font-plus-jakarta" });
@@ -28,6 +29,7 @@ export default function RootLayout({
       <head>{/* Fonts are loaded via next/font to avoid render-blocking links */}</head>
       <body className={`${inter.variable} ${preahvihear.variable} ${plusJakarta.variable} ${poppins.variable} ${inter.className}`}>
         <ThemeProvider attribute="class" enableSystem={false} defaultTheme="dark">
+          <PerformanceMonitor />
           <TubelightNavbar />
           {children}
           <Toaster richColors position="bottom-center" />
