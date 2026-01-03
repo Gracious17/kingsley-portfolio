@@ -4,7 +4,7 @@ import Image from "next/image";
 import AboutImg from "../../public/assets/about.jpg";
 import myImg from "../../public/assets/me2.png";
 import SectionHeaders from "./SectionHeaders";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
 export function About() {
