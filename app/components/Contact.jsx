@@ -68,7 +68,7 @@ const Contact = () => {
        setErrorMessage("");
    }
   return (
-    <section id="contact" className="w-full bg-[#1a0b2e] text-white py-24 lg:py-32 relative overflow-hidden">
+    <section id="contact" className="w-full bg-transparent text-white py-24 lg:py-32 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
         <div className="absolute top-20 left-10 w-96 h-96 bg-purple-600/30 rounded-full blur-[120px]" />

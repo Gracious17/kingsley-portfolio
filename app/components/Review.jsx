@@ -1,7 +1,5 @@
 import React from "react";
-import { Marquee } from "./magicui/marquee";
-import ReviewCard from "./ReviewCard";
-import SectionHeaders from "./SectionHeaders";
+import { DesignTestimonial } from "./ui/design-testimonial";
 
 const reviews = [
   {
@@ -28,8 +26,7 @@ const reviews = [
     body: "Kingsley successfully tested and integrated our API, meeting all requirements. His submission was valid, detailed, and showed strong technical expertise.",
     img: "https://avatar.vercel.sh/swwipeapi",
   },
-
-   {
+  {
     name: "Ngozi Eze",
     username: "@ngozieze",
     body: "Collaborating with Kingsley was smooth and productive. His ability to integrate design with functionality is impressive. I’d definitely work with him again.",
@@ -43,29 +40,18 @@ const reviews = [
   },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
+const mappedTestimonials = reviews.map(review => ({
+  quote: review.body,
+  author: review.name,
+  role: "Client",
+  company: review.username.replace('@', '').toUpperCase()
+}));
 
 export function Review() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-[#1a0b2e] py-24 lg:py-32 animate-[var(--animate-marquee)]">
-      <div className="text-center mb-12">
-        <SectionHeaders header="Reviews" />
-        <p className="text-lg sm:text-xl tracking-widest uppercase text-[#a362ff] font-['Poppins'] font-semibold mt-4">What Clients Say</p>
-      </div>
-      <Marquee pauseOnHover className="[--duration:25s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:25s] mt-4">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
-    </div>
+    <section id="reviews" className="w-full bg-transparent">
+      <DesignTestimonial testimonials={mappedTestimonials} />
+    </section>
   );
 }
 

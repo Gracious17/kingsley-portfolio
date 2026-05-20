@@ -5,7 +5,7 @@ import GitHubIcon from './icons/GitHubIcon';
 
 const Footer = () => {
   return (
-    <footer className="w-full py-6 flex flex-col items-center justify-center border-t border-purple-500/20 bg-[#1a0b2e] text-white shadow-lg shadow-purple-900/50">
+    <footer className="w-full py-6 flex flex-col items-center justify-center border-t border-white/10 bg-transparent text-white">
       <div className="flex items-center gap-6 mb-4">
         <a
           href="https://www.instagram.com"

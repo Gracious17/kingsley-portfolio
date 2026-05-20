@@ -1,14 +1,10 @@
-
 import React from "react";
-
-import Home  from "./components/Home"
+import PortfolioWrapper from "./components/PortfolioWrapper";
 
 const Page = () => {
-  
   return (
     <div className="overflow-hidden">
-      
-      <Home/>
+      <PortfolioWrapper />
     </div>
   );
 };
