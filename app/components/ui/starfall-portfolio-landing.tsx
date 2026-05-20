@@ -2,7 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three'; 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'; 
  
- // --- TYPE DEFINITIONS FOR PROPS --- 
+ import TiltedDock from './tilted-dock';
+import { NameWatermark } from './name-watermark';
+
+// --- TYPE DEFINITIONS FOR PROPS --- 
  interface NavLink { label: string; href: string; } 
  interface Project { title: string; description: string; tags: string[]; imageContent?: React.ReactNode; } 
  interface Stat { value: string; label: string; } 
@@ -131,23 +134,9 @@ const MagneticButton: React.FC<{
      <div className="bg-background text-foreground geist-font min-h-screen"> 
        {showAnimatedBackground && <AuroraBackground />} 
        <div className="relative"> 
-         <nav className="w-full px-6 py-4"> 
-             <div className="max-w-7xl mx-auto flex justify-between items-center"> 
-                 <div className="flex items-center space-x-2"> 
-                     <div className="w-8 h-8 rounded-lg bg-border backdrop-blur-md border border-border flex items-center justify-center"> 
-                         <span className="geist-font text-sm font-bold text-foreground">{logo.initials}</span> 
-                     </div> 
-                     <span className="geist-font text-lg font-medium text-foreground">{logo.name}</span> 
-                 </div> 
-                 <div className="hidden md:flex items-center space-x-8"> 
-                     {navLinks.map(link => ( 
-                         <a key={link.label} href={link.href} className="text-muted-foreground hover:text-foreground transition-colors inter-font text-sm">{link.label}</a> 
-                     ))} 
-                 </div> 
-                 <button onClick={resume.onClick} className="glass-button px-4 py-2 rounded-lg text-foreground text-sm font-medium inter-font">{resume.label}</button> 
-             </div> 
-         </nav> 
-         <div className="divider" /> 
+         <NameWatermark name={logo.name as string} />
+         <TiltedDock resumeClick={resume.onClick} />
+         
          <main id="about" className="w-full min-h-screen flex flex-col items-center justify-center px-6 py-20"> 
              <div className="max-w-6xl mx-auto text-center"> 
                  <div className="mb-8 float-animation"> 
@@ -166,7 +155,6 @@ const MagneticButton: React.FC<{
                         {ctaButtons.secondary.label}
                      </MagneticButton> 
                  </div> 
-                 <div className="divider mb-16" /> 
                  <div id="projects" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16"> 
                      {projects.map((project, index) => ( 
                          <div key={index} className="glass-card rounded-2xl p-6 text-left"> 
@@ -185,7 +173,6 @@ const MagneticButton: React.FC<{
                          </div> 
                      ))} 
                  </div> 
-                 <div className="divider mb-16" /> 
                  <div id="skills" className="flex flex-col sm:flex-row justify-center items-center gap-8 text-center"> 
                      {stats.map((stat, index) => ( 
                          <React.Fragment key={stat.label}> 
