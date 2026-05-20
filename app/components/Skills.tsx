@@ -3,6 +3,20 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { 
+  SiTypescript, 
+  SiExpress, 
+  SiPostgresql, 
+  SiPrisma, 
+  SiJest, 
+  SiPostman, 
+  SiJira, 
+  SiTrello, 
+  SiReactquery,
+  SiExpo
+} from "react-icons/si";
+import { TbBrandReactNative, TbApi } from "react-icons/tb";
+import { LuBrainCircuit } from "react-icons/lu";
 
 const skillCategories = [
   {
@@ -10,11 +24,11 @@ const skillCategories = [
     skills: [
       { name: "React.js", icon: "/assets/skill/react.png" },
       { name: "Next.js", icon: "/assets/skill/nextjs.png" },
-      { name: "TypeScript", icon: null },
+      { name: "TypeScript", icon: <SiTypescript className="w-full h-full text-[#3178C6]" /> },
       { name: "JavaScript (ES6+)", icon: "/assets/skill/javascript.png" },
       { name: "Tailwind CSS", icon: "/assets/skill/tailwind.png" },
-      { name: "React Native", icon: null },
-      { name: "Expo", icon: null },
+      { name: "React Native", icon: <TbBrandReactNative className="w-full h-full text-[#61DAFB]" /> },
+      { name: "Expo", icon: <SiExpo className="w-full h-full text-white" /> },
       { name: "HTML5 & CSS3", icon: "/assets/skill/html.png" },
     ],
   },
@@ -22,21 +36,21 @@ const skillCategories = [
     title: "Backend & State",
     skills: [
       { name: "Node.js", icon: "/assets/skill/node.png" },
-      { name: "Express.js", icon: null },
-      { name: "Zustand", icon: null },
-      { name: "React Query", icon: null },
-      { name: "PostgreSQL", icon: null },
-      { name: "Prisma ORM", icon: null },
+      { name: "Express.js", icon: <SiExpress className="w-full h-full text-white" /> },
+      { name: "Zustand", icon: <LuBrainCircuit className="w-full h-full text-[#43392F]" /> },
+      { name: "React Query", icon: <SiReactquery className="w-full h-full text-[#FF4154]" /> },
+      { name: "PostgreSQL", icon: <SiPostgresql className="w-full h-full text-[#4169E1]" /> },
+      { name: "Prisma ORM", icon: <SiPrisma className="w-full h-full text-white" /> },
     ],
   },
   {
     title: "Tools & Testing",
     skills: [
       { name: "Git & GitHub", icon: "/assets/skill/github1.png" },
-      { name: "Jest", icon: null },
-      { name: "Postman", icon: null },
-      { name: "Jira / Trello", icon: null },
-      { name: "REST APIs", icon: null },
+      { name: "Jest", icon: <SiJest className="w-full h-full text-[#C21325]" /> },
+      { name: "Postman", icon: <SiPostman className="w-full h-full text-[#FF6C37]" /> },
+      { name: "Jira / Trello", icon: <div className="flex gap-1 w-full h-full"><SiJira className="text-[#0052CC]" /><SiTrello className="text-[#0052CC]" /></div> },
+      { name: "REST APIs", icon: <TbApi className="w-full h-full text-primary" /> },
     ],
   },
 ];
@@ -86,13 +100,17 @@ const Skills = () => {
                   >
                     <div className="flex items-center gap-4">
                       {skill.icon ? (
-                        <div className="relative w-8 h-8 grayscale group-hover:grayscale-0 transition-all duration-300">
-                          <Image
-                            src={skill.icon}
-                            alt={skill.name}
-                            fill
-                            className="object-contain"
-                          />
+                        <div className="relative w-8 h-8 grayscale group-hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+                          {typeof skill.icon === 'string' ? (
+                            <Image
+                              src={skill.icon}
+                              alt={skill.name}
+                              fill
+                              className="object-contain"
+                            />
+                          ) : (
+                            skill.icon
+                          )}
                         </div>
                       ) : (
                         <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-xs text-muted-foreground group-hover:text-primary transition-colors">

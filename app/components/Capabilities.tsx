@@ -5,20 +5,20 @@ import { motion } from "framer-motion";
 
 const capabilities = [
   {
-    title: "Frontend Architecture",
-    description: "Building scalable React applications with proper state management, code splitting, and performance optimization. Setting up tooling and best practices.",
+    title: "Full-Stack Architecture",
+    description: "Building end-to-end scalable applications using the T3 stack (Next.js, Prisma, PostgreSQL). Designing robust API contracts and database schemas for high-performance systems.",
   },
   {
-    title: "Design Systems",
-    description: "Creating component libraries that balance flexibility with consistency. Documentation, accessibility, and developer experience built in from day one.",
+    title: "Real-time Systems",
+    description: "Implementing low-latency communication features like live classes, chat, and collaborative tools using WebRTC and Socket.io. Experience in scaling real-time engagement.",
   },
   {
-    title: "Product Engineering",
-    description: "End-to-end feature development from requirements to deployment. Working closely with design and product to ship the right solution, not just code.",
+    title: "Mobile Development",
+    description: "Crafting cross-platform mobile experiences with React Native and Expo. Focused on native performance, smooth animations, and consistent UX across iOS and Android.",
   },
   {
-    title: "Performance",
-    description: "Diagnosing and fixing performance bottlenecks. Optimizing bundle size, runtime performance, and Core Web Vitals. Making fast experiences feel instant.",
+    title: "Performance & DX",
+    description: "Optimizing Core Web Vitals and backend query performance. Setting up automated testing (Jest) and streamlined CI/CD workflows for developer productivity.",
   },
 ];
 

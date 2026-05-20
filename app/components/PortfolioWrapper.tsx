@@ -61,9 +61,9 @@ const PortfolioWrapper = () => {
       )
     })),
     stats: [
-      { value: '2+', label: 'Years Experience' },
+      { value: '4+', label: 'Years Experience' },
+      { value: '15+', label: 'Technologies Mastered' },
       { value: '10+', label: 'Projects Completed' },
-      { value: '5+', label: 'Technologies Mastered' },
     ],
     showAnimatedBackground: true,
   };

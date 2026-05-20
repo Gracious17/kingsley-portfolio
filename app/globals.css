@@ -101,7 +101,7 @@ html {
   }
 
   .primary-button {
-    @apply bg-white text-black hover:bg-white/90 transition-all duration-300;
+    @apply bg-white text-black hover:bg-white/90 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)];
   }
 
   .divider {
