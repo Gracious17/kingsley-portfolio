@@ -34,7 +34,7 @@ export default function SuccessMessage({ onClose }: { onClose: () => void }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 30 }}
       transition={{ duration: 0.4 }}
-      className="bg-white border border-[#5651e5] shadow-2xl rounded-2xl p-6 max-w-md w-full mx-auto text-center space-y-3"
+      className="bg-zinc-900/50 border border-[#a362ff]/30 backdrop-blur-xl shadow-2xl rounded-2xl p-6 md:p-10 w-full mx-auto text-center space-y-4"
     >
       <div className="flex justify-center">
         <CheckCircle className="text-[#5651e5]" size={48} />
