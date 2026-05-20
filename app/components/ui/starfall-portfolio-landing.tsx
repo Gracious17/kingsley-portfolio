@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react'; 
- import * as THREE from 'three'; 
+import React, { useEffect, useRef, useState } from 'react'; 
+import * as THREE from 'three'; 
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'; 
  
  // --- TYPE DEFINITIONS FOR PROPS --- 
  interface NavLink { label: string; href: string; } 
@@ -73,7 +74,48 @@ import React, { useEffect, useRef } from 'react';
    stats: [ { value: '50+', label: 'Projects Completed' }, { value: '5+', label: 'Years Experience' }, { value: '15+', label: 'Happy Clients' }, ], 
  }; 
  
- // --- MAIN CUSTOMIZABLE PORTFOLIO COMPONENT --- 
+ // --- MAGNETIC BUTTON COMPONENT ---
+const MagneticButton: React.FC<{ 
+    children: React.ReactNode; 
+    onClick?: () => void; 
+    className?: string;
+}> = ({ children, onClick, className }) => {
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+    const springConfig = { damping: 15, stiffness: 150 };
+    const x = useSpring(mouseX, springConfig);
+    const y = useSpring(mouseY, springConfig);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+        const { clientX, clientY, currentTarget } = e;
+        const { left, top, width, height } = currentTarget.getBoundingClientRect();
+        const centerX = left + width / 2;
+        const centerY = top + height / 2;
+        mouseX.set((clientX - centerX) * 0.5);
+        mouseY.set((clientY - centerY) * 0.5);
+    };
+
+    const handleMouseLeave = () => {
+        mouseX.set(0);
+        mouseY.set(0);
+    };
+
+    return (
+        <motion.button
+            style={{ x, y }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            onClick={onClick}
+            className={className}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+        >
+            {children}
+        </motion.button>
+    );
+};
+
+// --- MAIN CUSTOMIZABLE PORTFOLIO COMPONENT --- 
  const PortfolioPage: React.FC<PortfolioPageProps> = ({ 
    logo = defaultData.logo!, 
    navLinks = defaultData.navLinks!, 
@@ -116,8 +158,13 @@ import React, { useEffect, useRef } from 'react';
                      <p className="md:text-xl max-w-3xl leading-relaxed inter-font text-lg font-light text-muted-foreground mx-auto">{hero.subtitle}</p> 
                  </div> 
                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"> 
-                     <button onClick={ctaButtons.primary?.onClick} className="primary-button px-6 py-3 text-foreground rounded-lg font-medium text-sm min-w-[160px]">{ctaButtons.primary.label}</button> 
-                     <button onClick={ctaButtons.secondary?.onClick} className="glass-button min-w-[160px] inter-font text-sm font-medium text-foreground rounded-lg px-6 py-3">{ctaButtons.secondary.label}</button> 
+                     <MagneticButton onClick={ctaButtons.primary?.onClick} className="primary-button px-8 py-4 rounded-xl font-semibold text-sm min-w-[180px] tracking-wide group">
+                         <span className="relative z-10">{ctaButtons.primary.label}</span>
+                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                      </MagneticButton> 
+                     <MagneticButton onClick={ctaButtons.secondary?.onClick} className="glass-button min-w-[180px] inter-font text-sm font-medium text-foreground rounded-xl px-8 py-4">
+                        {ctaButtons.secondary.label}
+                     </MagneticButton> 
                  </div> 
                  <div className="divider mb-16" /> 
                  <div id="projects" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16"> 
