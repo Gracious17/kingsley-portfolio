@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>{/* Fonts are loaded via next/font to avoid render-blocking links */}</head>
       <body className={`${inter.variable} ${preahvihear.variable} ${plusJakarta.variable} ${poppins.variable} ${inter.className}`}>
-        <ThemeProvider attribute="class" enableSystem={false} defaultTheme="dark">
+        <ThemeProvider attribute="class" enableSystem={false} defaultTheme="dark" forcedTheme="dark">
           <PerformanceMonitor />
           {children}
           <Toaster richColors position="bottom-center" />
