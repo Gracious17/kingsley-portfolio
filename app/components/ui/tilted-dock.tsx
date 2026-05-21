@@ -28,18 +28,18 @@ export default function TiltedDock({ resumeClick }: TiltedDockProps) {
   }, []); 
 
   const icons = [ 
-    { id: 1, icon: <Home size={24} />, label: "About", href: "#about" }, 
-    { id: 2, icon: <Briefcase size={24} />, label: "Projects", href: "#projects" }, 
-    { id: 3, icon: <Cpu size={24} />, label: "Expertise", href: "#skills" }, 
-    { id: 4, icon: <Mail size={24} />, label: "Contact", href: "#contact" }, 
-    { id: 5, icon: <FileText size={24} />, label: "Resume", onClick: resumeClick }, 
+    { id: 1, icon: <Home className="w-5 h-5 md:w-6 md:h-6" />, label: "About", href: "#about" }, 
+    { id: 2, icon: <Briefcase className="w-5 h-5 md:w-6 md:h-6" />, label: "Projects", href: "#projects" }, 
+    { id: 3, icon: <Cpu className="w-5 h-5 md:w-6 md:h-6" />, label: "Expertise", href: "#skills" }, 
+    { id: 4, icon: <Mail className="w-5 h-5 md:w-6 md:h-6" />, label: "Contact", href: "#contact" }, 
+    { id: 5, icon: <FileText className="w-5 h-5 md:w-6 md:h-6" />, label: "Resume", onClick: resumeClick }, 
   ]; 
  
   return ( 
     <TooltipProvider delayDuration={0}>
-      <div className="fixed bottom-8 md:bottom-auto md:top-8 left-1/2 -translate-x-1/2 z-[100]"> 
+      <div className="fixed bottom-6 md:bottom-auto md:top-8 left-1/2 -translate-x-1/2 z-[100] w-auto max-w-[95vw]"> 
         <motion.div 
-          className="flex gap-4 md:gap-8 px-6 md:px-10 py-4 rounded-3xl 
+          className="flex gap-2 md:gap-8 px-4 md:px-10 py-3 md:py-4 rounded-2xl md:rounded-3xl 
                      backdrop-blur-3xl bg-white/[0.05] dark:bg-black/20 
                      border border-white/10
                      shadow-[0_20px_50px_rgba(0,0,0,0.5)]" 

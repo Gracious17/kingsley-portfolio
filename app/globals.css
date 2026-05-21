@@ -117,8 +117,17 @@ html {
     animation: float 6s ease-in-out infinite;
   }
 
-  .gradient-text {
+  .gradient-text, .text-gradient {
     @apply bg-gradient-to-r from-white via-white/80 to-white/50 bg-clip-text text-transparent;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   .glass-card {

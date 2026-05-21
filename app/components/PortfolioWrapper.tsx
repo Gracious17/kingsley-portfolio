@@ -5,6 +5,7 @@ import { PortfolioPage, PortfolioPageProps } from "./ui/starfall-portfolio-landi
 import { projects as projectData } from "@/lib/data/projects";
 import Image from "next/image";
 import Contact from "./Contact";
+import FeaturedProjects from "./FeaturedProjects";
 import Footer from "./Footer";
 import Review from "./Review";
 import ResumeModal from "./ResumeModal";
@@ -47,22 +48,6 @@ const PortfolioWrapper = () => {
         },
       },
     },
-    projects: projectData.map((p: any) => ({
-      title: p.title,
-      description: p.overview,
-      tags: p.technologies || [],
-      imageContent: p.backgroundImg ? (
-        <Image 
-          src={p.backgroundImg} 
-          alt={p.title} 
-          width={800}
-          height={600}
-          className="w-full h-full object-cover"
-        />
-      ) : (
-        <div className="text-4xl">🚀</div>
-      )
-    })),
     stats: [
       { value: '4+', label: 'Years Experience' },
       { value: '15+', label: 'Technologies Mastered' },
@@ -77,13 +62,16 @@ const PortfolioWrapper = () => {
         <div className="w-full">
             <Capabilities />
         </div>
-        <div className="mt-32 w-full">
+        <div className="mt-20 md:mt-32 w-full">
+            <FeaturedProjects />
+        </div>
+        <div className="mt-20 md:mt-32 w-full">
             <Skills />
         </div>
-          <div className="mt-32 w-full">
+          <div className="mt-20 md:mt-32 w-full">
               <Review />
           </div>
-          <div id="contact" className="mt-32 w-full">
+          <div className="mt-20 md:mt-32 w-full">
               <Contact />
           </div>
           <Footer />

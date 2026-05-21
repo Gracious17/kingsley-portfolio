@@ -16,13 +16,13 @@ export const NameWatermark: React.FC<NameWatermarkProps> = ({ name }) => {
 
   return (
     <motion.div
-      className="fixed top-0 inset-x-0 flex flex-col justify-start items-center select-none pointer-events-none z-[1] pt-32 md:pt-48 overflow-hidden"
+      className="fixed top-0 inset-x-0 flex flex-col justify-start items-center select-none pointer-events-none z-[1] pt-24 md:pt-48 overflow-hidden"
       style={{ opacity, y }}
     >
       {words.map((word, index) => (
         <h1 
           key={index}
-          className="text-[18vw] sm:text-[20vw] md:text-[15vw] font-bold text-white text-center leading-[0.75] tracking-tighter uppercase italic"
+          className="text-[22vw] sm:text-[20vw] md:text-[15vw] font-bold text-white text-center leading-[0.8] tracking-tighter uppercase italic opacity-80"
         >
           {word}
         </h1>

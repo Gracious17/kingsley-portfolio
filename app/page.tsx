@@ -3,7 +3,7 @@ import PortfolioWrapper from "./components/PortfolioWrapper";
 
 const Page = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="w-full overflow-x-hidden">
       <PortfolioWrapper />
     </div>
   );

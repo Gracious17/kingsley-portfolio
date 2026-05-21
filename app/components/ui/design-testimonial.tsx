@@ -53,11 +53,11 @@
    const current = testimonials[activeIndex] 
  
    return ( 
-     <div className="flex items-center justify-center min-h-[80vh] bg-transparent overflow-hidden py-20"> 
-       <div ref={containerRef} className="relative w-full max-w-5xl px-6" onMouseMove={handleMouseMove}> 
+     <div className="flex items-center justify-center min-h-[60vh] md:min-h-[80vh] bg-transparent overflow-hidden py-12 md:py-20"> 
+       <div ref={containerRef} className="relative w-full max-w-5xl px-4 md:px-6" onMouseMove={handleMouseMove}> 
          {/* Oversized index number - positioned to bleed off left edge */} 
          <motion.div 
-           className="absolute -left-8 top-1/2 -translate-y-1/2 text-[15rem] md:text-[28rem] font-bold text-foreground/[0.03] select-none pointer-events-none leading-none tracking-tighter" 
+           className="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 text-[10rem] md:text-[28rem] font-bold text-foreground/[0.03] select-none pointer-events-none leading-none tracking-tighter" 
            style={{ x: numberX, y: numberY }} 
          > 
            <AnimatePresence mode="wait"> 
@@ -101,7 +101,7 @@
            </div> 
  
            {/* Center - main content */} 
-           <div className="flex-1 md:pl-16 py-12"> 
+           <div className="flex-1 md:pl-16 py-6 md:py-12"> 
              {/* Company badge */} 
              <AnimatePresence mode="wait"> 
                <motion.div 
@@ -110,9 +110,9 @@
                  animate={{ opacity: 1, x: 0 }} 
                  exit={{ opacity: 0, x: 20 }} 
                  transition={{ duration: 0.4 }} 
-                 className="mb-8" 
+                 className="mb-6 md:mb-8" 
                > 
-                 <span className="inline-flex items-center gap-2 text-xs font-mono text-muted-foreground border border-border rounded-full px-3 py-1"> 
+                 <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-mono text-muted-foreground border border-border rounded-full px-3 py-1"> 
                    <span className="w-1.5 h-1.5 rounded-full bg-primary" /> 
                    {current.company} 
                  </span> 
@@ -120,11 +120,11 @@
              </AnimatePresence> 
  
              {/* Quote with character reveal */} 
-             <div className="relative mb-12 min-h-[140px]"> 
+             <div className="relative mb-8 md:mb-12 min-h-[120px] md:min-h-[140px]"> 
                <AnimatePresence mode="wait"> 
                  <motion.blockquote 
                    key={activeIndex} 
-                   className="text-2xl md:text-4xl lg:text-5xl font-light text-foreground leading-[1.15] tracking-tight" 
+                   className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light text-foreground leading-[1.2] md:leading-[1.15] tracking-tight" 
                    initial="hidden" 
                    animate="visible" 
                    exit="exit" 
@@ -160,7 +160,7 @@
              </div> 
  
              {/* Author row */} 
-             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-8"> 
+             <div className="flex flex-row items-end justify-between gap-4 md:gap-8"> 
                <AnimatePresence mode="wait"> 
                  <motion.div 
                    key={activeIndex} 
@@ -168,28 +168,28 @@
                    animate={{ opacity: 1, y: 0 }} 
                    exit={{ opacity: 0, y: -20 }} 
                    transition={{ duration: 0.4, delay: 0.2 }} 
-                   className="flex items-center gap-4" 
+                   className="flex items-center gap-3 md:gap-4" 
                  > 
                    {/* Animated line before name */} 
                    <motion.div 
-                     className="w-8 h-px bg-foreground" 
+                     className="w-4 md:w-8 h-px bg-foreground" 
                      initial={{ scaleX: 0 }} 
                      animate={{ scaleX: 1 }} 
                      transition={{ duration: 0.6, delay: 0.3 }} 
                      style={{ originX: 0 }} 
                    /> 
                    <div> 
-                     <p className="text-base font-medium text-foreground">{current.author}</p> 
-                     <p className="text-sm text-muted-foreground">{current.role}</p> 
+                     <p className="text-sm md:text-base font-medium text-foreground">{current.author}</p> 
+                     <p className="text-[10px] md:text-sm text-muted-foreground">{current.role}</p> 
                    </div> 
                  </motion.div> 
                </AnimatePresence> 
  
                {/* Navigation */} 
-               <div className="flex items-center gap-4"> 
+               <div className="flex items-center gap-2 md:gap-4"> 
                  <motion.button 
                    onClick={goPrev} 
-                   className="group relative w-12 h-12 rounded-full border border-border flex items-center justify-center overflow-hidden" 
+                   className="group relative w-10 h-10 md:w-12 md:h-12 rounded-full border border-border flex items-center justify-center overflow-hidden" 
                    whileTap={{ scale: 0.95 }} 
                  > 
                    <motion.div 
@@ -199,8 +199,8 @@
                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} 
                    /> 
                    <svg 
-                     width="18" 
-                     height="18" 
+                     width="16" 
+                     height="16" 
                      viewBox="0 0 16 16" 
                      fill="none" 
                      className="relative z-10 text-foreground group-hover:text-background transition-colors" 
@@ -217,7 +217,7 @@
  
                  <motion.button 
                    onClick={goNext} 
-                   className="group relative w-12 h-12 rounded-full border border-border flex items-center justify-center overflow-hidden" 
+                   className="group relative w-10 h-10 md:w-12 md:h-12 rounded-full border border-border flex items-center justify-center overflow-hidden" 
                    whileTap={{ scale: 0.95 }} 
                  > 
                    <motion.div 
@@ -227,8 +227,8 @@
                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} 
                    /> 
                    <svg 
-                     width="18" 
-                     height="18" 
+                     width="16" 
+                     height="16" 
                      viewBox="0 0 16 16" 
                      fill="none" 
                      className="relative z-10 text-foreground group-hover:text-background transition-colors" 

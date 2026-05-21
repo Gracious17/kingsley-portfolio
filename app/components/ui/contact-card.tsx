@@ -32,7 +32,7 @@ export function ContactCard({
 	 return ( 
 	 	 <div 
 	 	 	 className={cn( 
-	 	 	 	 'bg-white/5 border border-white/10 backdrop-blur-xl relative grid w-full shadow-[0_0_50px_rgba(0,0,0,0.3)] md:grid-cols-1 lg:grid-cols-5 divide-y md:divide-y-0 lg:divide-x divide-white/5 rounded-3xl overflow-hidden', 
+	 	 	 	 'bg-white/5 border border-white/10 backdrop-blur-xl relative grid w-full shadow-[0_0_50px_rgba(0,0,0,0.3)] lg:grid-cols-5 divide-y lg:divide-y-0 lg:divide-x divide-white/5 rounded-3xl overflow-hidden', 
 	 	 	 	 className, 
 	 	 	 )} 
 	 	 	 {...props} 
@@ -42,16 +42,16 @@ export function ContactCard({
 	 	 	 <PlusIcon className="absolute -bottom-3 -left-3 h-6 w-6 text-white opacity-20 z-10" /> 
 	 	 	 <PlusIcon className="absolute -right-3 -bottom-3 h-6 w-6 text-white opacity-20 z-10" /> 
 	 	 	 <div className="flex flex-col justify-between lg:col-span-2 bg-gradient-to-br from-white/[0.02] to-transparent"> 
-	 	 	 	 <div className="relative h-full space-y-6 p-8 md:p-12 lg:p-16"> 
+	 	 	 	 <div className="relative h-full space-y-6 p-6 md:p-12 lg:p-16"> 
 	 	 	 	 	 <div className="space-y-4">
 						<h1 className="text-3xl font-light md:text-5xl lg:text-6xl text-white tracking-tight geist-font"> 
 							{title} 
 						</h1> 
-						<p className="text-white/40 max-w-xl text-base md:text-lg inter-font font-light leading-relaxed"> 
+						<p className="text-white/40 max-w-xl text-sm md:text-lg inter-font font-light leading-relaxed"> 
 							{description} 
 						</p> 
 					 </div>
-	 	 	 	 	 <div className="grid gap-x-12 gap-y-6 grid-cols-1 sm:grid-cols-1 pt-8"> 
+	 	 	 	 	 <div className="grid gap-x-12 gap-y-4 grid-cols-1 pt-4 md:pt-8"> 
 	 	 	 	 	 	 {contactInfo?.map((info, index) => ( 
 	 	 	 	 	 	 	 <ContactInfo key={index} {...info} /> 
 	 	 	 	 	 	 ))} 
@@ -60,7 +60,7 @@ export function ContactCard({
 	 	 	 </div> 
 	 	 	 <div 
 	 	 	 	 className={cn( 
-	 	 	 	 	 'bg-white/[0.03] flex h-full w-full items-center p-8 md:p-12 lg:col-span-3', 
+	 	 	 	 	 'bg-white/[0.03] flex h-full w-full items-center p-6 md:p-12 lg:col-span-3', 
 	 	 	 	 	 formSectionClassName, 
 	 	 	 	 )} 
 	 	 	 > 
