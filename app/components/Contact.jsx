@@ -130,7 +130,11 @@ const Contact = () => {
           >
             <AnimatePresence mode="wait">
               {status === STATUS.SUCCESS ? (
-                <SuccessMessage key="success" onClose={resetForm} />
+                <SuccessMessage 
+                  key="success" 
+                  onClose={resetForm} 
+                  subtitle={`Thank You ${formData.name.split(' ')[0]}!`}
+                />
               ) : (
                 <form onSubmit={handleSubmit} className="w-full space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
