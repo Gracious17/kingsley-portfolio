@@ -137,7 +137,7 @@ const MagneticButton: React.FC<{
          <NameWatermark name={logo.name as string} />
          <TiltedDock resumeClick={resume.onClick} />
          
-         <main id="about" className="w-full min-h-screen flex flex-col items-center justify-center px-6 py-20"> 
+         <main id="about" className="w-full min-h-screen flex flex-col items-center justify-center px-6 pt-40 pb-20 md:pt-64"> 
              <div className="max-w-6xl mx-auto text-center"> 
                  <div className="mb-8 float-animation"> 
                      <h1 className="md:text-6xl lg:text-7xl leading-[1.1] geist-font text-5xl font-light text-foreground tracking-tight mb-4"> 

@@ -16,7 +16,7 @@ export const NameWatermark: React.FC<NameWatermarkProps> = ({ name }) => {
 
   return (
     <motion.div
-      className="fixed top-0 inset-x-0 flex flex-col justify-start items-center select-none pointer-events-none z-[1] pt-6 md:pt-10 overflow-hidden"
+      className="fixed top-0 inset-x-0 flex flex-col justify-start items-center select-none pointer-events-none z-[1] pt-32 md:pt-48 overflow-hidden"
       style={{ opacity, y }}
     >
       {words.map((word, index) => (

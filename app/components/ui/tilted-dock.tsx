@@ -37,7 +37,7 @@ export default function TiltedDock({ resumeClick }: TiltedDockProps) {
  
   return ( 
     <TooltipProvider delayDuration={0}>
-      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100]"> 
+      <div className="fixed bottom-8 md:bottom-auto md:top-8 left-1/2 -translate-x-1/2 z-[100]"> 
         <motion.div 
           className="flex gap-4 md:gap-8 px-6 md:px-10 py-4 rounded-3xl 
                      backdrop-blur-3xl bg-white/[0.05] dark:bg-black/20 

@@ -30,7 +30,7 @@ const PortfolioWrapper = () => {
     hero: {
       titleLine1: 'Software Engineer &',
       titleLine2Gradient: 'Digital Innovator',
-      subtitle: 'I build robust and scalable web applications with a focus on modern technologies and user-centric design.',
+      subtitle: 'I build robust and scalable web and mobile applications with a focus on modern technologies and user-centric design.',
     },
     ctaButtons: {
       primary: {
