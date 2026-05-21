@@ -2,7 +2,7 @@
  
  import type React from "react" 
  
- import { useState, useEffect, useRef } from "react" 
+ import { useState, useEffect, useRef, useCallback } from "react" 
  import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion" 
  
  interface TestimonialData {
@@ -32,23 +32,23 @@
    const numberX = useTransform(x, [-200, 200], [-20, 20]) 
    const numberY = useTransform(y, [-200, 200], [-10, 10]) 
  
-   const handleMouseMove = (e: React.MouseEvent) => { 
-     const rect = containerRef.current?.getBoundingClientRect() 
-     if (rect) { 
-       const centerX = rect.left + rect.width / 2 
-       const centerY = rect.top + rect.height / 2 
-       mouseX.set(e.clientX - centerX) 
-       mouseY.set(e.clientY - centerY) 
-     } 
-   } 
- 
-   const goNext = () => setActiveIndex((prev) => (prev + 1) % testimonials.length) 
-   const goPrev = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length) 
+   const goNext = useCallback(() => setActiveIndex((prev) => (prev + 1) % testimonials.length), [testimonials.length]);
+     const goPrev = useCallback(() => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length), [testimonials.length]);
+   
+     const handleMouseMove = (e: React.MouseEvent) => { 
+       const rect = containerRef.current?.getBoundingClientRect() 
+       if (rect) { 
+         const centerX = rect.left + rect.width / 2 
+         const centerY = rect.top + rect.height / 2 
+         mouseX.set(e.clientX - centerX) 
+         mouseY.set(e.clientY - centerY) 
+       } 
+     }
  
    useEffect(() => { 
      const timer = setInterval(goNext, 6000) 
      return () => clearInterval(timer) 
-   }, [testimonials.length]) 
+   }, [goNext]) 
  
    const current = testimonials[activeIndex] 
  

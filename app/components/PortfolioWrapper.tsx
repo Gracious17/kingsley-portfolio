@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { PortfolioPage, PortfolioPageProps } from "./ui/starfall-portfolio-landing";
 import { projects as projectData } from "@/lib/data/projects";
+import Image from "next/image";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Review from "./Review";
@@ -51,9 +52,11 @@ const PortfolioWrapper = () => {
       description: p.overview,
       tags: p.technologies || [],
       imageContent: p.backgroundImg ? (
-        <img 
+        <Image 
           src={p.backgroundImg} 
           alt={p.title} 
+          width={800}
+          height={600}
           className="w-full h-full object-cover"
         />
       ) : (

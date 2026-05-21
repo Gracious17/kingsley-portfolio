@@ -87,7 +87,7 @@ const Contact = () => {
             Get in Touch
           </h2>
           <p className="text-white/75 max-w-2xl mx-auto text-base lg:text-lg inter-font">
-            I'm available for contracts or full-time positions. Feel free to reach out via the form or connect with me on social media!
+            I&apos;m available for contracts or full-time positions. Feel free to reach out via the form or connect with me on social media!
           </p>
         </motion.div>
 
