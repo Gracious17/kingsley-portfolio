@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Preahvihear, Plus_Jakarta_Sans, Poppins } from "next/font/google";
+// import { Inter, Preahvihear, Plus_Jakarta_Sans, Poppins } from "next/font/google";
 // import dynamic from "next/dynamic";
 import "./globals.css";
-import TubelightNavbar from "../app/components/TubelightNavbar";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "next-themes";
 import ExitIntentWrapper from "@/app/components/exitShow/ExitIntentWrapper"
 import PerformanceMonitor from "@/app/components/ui/PerformanceMonitor";
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const preahvihear = Preahvihear({ subsets: ["latin"], weight: "400", variable: "--font-preahvihear" });
-const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: "600", variable: "--font-plus-jakarta" });
-const poppins = Poppins({ subsets: ["latin"], weight: ["500", "600"], variable: "--font-poppins" });
+
+// Fallback font variables since Google Fonts fetch failed during build
+const inter = { variable: "--font-inter", className: "font-sans" };
+const preahvihear = { variable: "--font-preahvihear" };
+const plusJakarta = { variable: "--font-plus-jakarta" };
+const poppins = { variable: "--font-poppins" };
 
 // const ExitIntentWrapper = dynamic(() => import("./components/exitshow/ExitIntentWrapper"), { ssr: false });
 
@@ -30,7 +31,6 @@ export default function RootLayout({
       <body className={`${inter.variable} ${preahvihear.variable} ${plusJakarta.variable} ${poppins.variable} ${inter.className}`}>
         <ThemeProvider attribute="class" enableSystem={false} defaultTheme="dark">
           <PerformanceMonitor />
-          <TubelightNavbar />
           {children}
           <Toaster richColors position="bottom-center" />
           <ExitIntentWrapper />

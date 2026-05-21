@@ -5,43 +5,16 @@ import GitHubIcon from './icons/GitHubIcon';
 
 const Footer = () => {
   return (
-    <footer className="w-full py-6 flex flex-col items-center justify-center border-t border-purple-500/20 bg-[#1a0b2e] text-white shadow-lg shadow-purple-900/50">
-      <div className="flex items-center gap-6 mb-4">
-        <a
-          href="https://www.instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          className="hover:scale-110 transition-transform duration-200"
-        >
-          <InstagramIcon width={18} height={18} color="#ffffff" />
-        </a>
-        <a
-          href="https://dribbble.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Dribbble"
-          className="hover:scale-110 transition-transform duration-200"
-        >
-          <DribbbleIcon width={18} height={18} color="#ffffff" />
-        </a>
-        <a
-          href="https://github.com/Gracious17"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-          className="hover:scale-110 transition-transform duration-200"
-        >
-          <GitHubIcon width={18} height={18} color="#ffffff" />
-        </a>
-      </div>
-     
+    <footer className="w-full py-12 flex flex-col items-center justify-center border-t border-white/5 bg-transparent text-white">
       <a
         href="mailto:kingsleygracious16@gmail.com"
-        className="text-sm text-white/90 hover:text-[#a362ff] hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a362ff] transition-colors"
+        className="text-sm text-white/40 hover:text-white transition-colors tracking-widest uppercase geist-font"
       >
         kingsleygracious16@gmail.com
       </a>
+      <p className="mt-4 text-[10px] text-white/20 uppercase tracking-[0.3em] inter-font">
+        © {new Date().getFullYear()} Gracious Kingsley • All Rights Reserved
+      </p>
     </footer>
   );
 }

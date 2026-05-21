@@ -9,13 +9,30 @@ import { RiRadioButtonFill } from "react-icons/ri";
 import { HiArrowLeft, HiExternalLink, HiCode, HiPlay } from "react-icons/hi";
 import { projects } from "@/lib/data/projects";
 
+interface Project {
+  id: number;
+  title: string;
+  stack: string;
+  overview: string;
+  features: string[];
+  conclusion: string;
+  backgroundImg: string;
+  demoUrl: string;
+  codeUrl: string;
+  video: string;
+  technologies: string[];
+  company?: string;
+  role?: string;
+  duration?: string;
+}
+
 interface Props {
   params: { id: string };
 }
 
 export default function ProjectDetailPage({ params }: Props) {
   // Convert both to strings for comparison to ensure matching
-  const project = projects.find((p) => String(p.id) === String(params.id));
+  const project = (projects as Project[]).find((p) => String(p.id) === String(params.id));
   const [showVideo, setShowVideo] = useState(false);
 
   if (!project) return notFound();
