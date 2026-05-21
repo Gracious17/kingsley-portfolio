@@ -12,6 +12,23 @@ import {
 import { Badge } from "./ui/badge";
 import { projects } from "@/lib/data/projects";
 
+interface Project {
+  id: number;
+  title: string;
+  stack: string;
+  overview: string;
+  features: string[];
+  conclusion: string;
+  backgroundImg: string;
+  demoUrl: string;
+  codeUrl: string;
+  video: string;
+  technologies: string[];
+  company?: string;
+  role?: string;
+  duration?: string;
+}
+
 export default function FeaturedProjects() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -78,7 +95,7 @@ export default function FeaturedProjects() {
           className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory gap-6 px-4 md:px-[10vw] py-12 scroll-smooth"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {projects.map((project) => (
+          {(projects as Project[]).map((project) => (
                 <CardHoverReveal
                   key={project.id}
                   className="min-w-[85vw] sm:min-w-[60vw] md:min-w-[45vw] lg:min-w-[40vw] aspect-[4/5] sm:aspect-[16/10] rounded-3xl border border-white/10 bg-zinc-900 shadow-2xl snap-center"
@@ -113,9 +130,16 @@ export default function FeaturedProjects() {
                   </div>
                   
                   <div className="space-y-1 md:space-y-2">
-                    <h3 className="text-lg md:text-2xl font-medium text-white geist-font tracking-tight">
-                      {project.title}
-                    </h3>
+                    <div className="flex flex-col gap-0.5">
+                      <h3 className="text-lg md:text-2xl font-medium text-white geist-font tracking-tight">
+                        {project.title}
+                      </h3>
+                      {(project.company || project.role) && (
+                        <p className="text-[#a362ff] text-[10px] md:text-xs font-medium uppercase tracking-widest inter-font">
+                          {project.role || project.company} {project.company && project.role ? `at ${project.company}` : ''}
+                        </p>
+                      )}
+                    </div>
                     <p className="text-white/50 text-[11px] md:text-sm line-clamp-2 md:line-clamp-3 inter-font leading-relaxed font-light">
                       {project.overview}
                     </p>

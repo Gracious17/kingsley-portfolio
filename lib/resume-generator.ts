@@ -67,8 +67,41 @@ export const generateResumePDF = () => {
 
   const experiences = [
     {
+      title: "Vintran Mobile App | Frontend Lead Engineer",
+      date: "Jan 2025 – 2026",
+      points: [
+        "Leading technical implementation for a fintech mobile application using React Native and Expo.",
+        "Directing a frontend team in delivering onboarding, KYC verification, and financial transaction workflows.",
+        "Spearheaded core modules: 6-step onboarding, 8-step signup, and secure passcode recovery flows.",
+        "Architected reusable component-driven architecture improving development scalability and efficiency.",
+        "Implemented secure API integrations for transaction processing and real-time dashboard synchronization."
+      ]
+    },
+    {
+      title: "LatterWorld School Management Platform | Frontend Engineer",
+      date: "Jan 2025 ",
+      points: [
+        "Independently developed a comprehensive School Management System frontend using Next.js and TypeScript.",
+        "Architected role-based dashboards for admins, teachers, students, and parents with RBAC workflows.",
+        "Built high-performance interfaces for scheduling, examinations, attendance, and academic results.",
+        "Engineered reusable modular component architecture to ensure consistency and rapid feature delivery.",
+        "Integrated RESTful APIs for academic management, communication systems, and real-time reporting."
+      ]
+    },
+    {
+      title: "Horizon QA Platform | Frontend Lead Engineer",
+      date: "Jan 2025 – 2026",
+      points: [
+        "Spearheaded frontend architecture for a scalable Software QA Testing Platform using Next.js, TypeScript, and Zustand.",
+        "Led the development of complex multi-role dashboards (Admin, Tester, Client) with distinct workflows and RBAC.",
+        "Architected scalable, modular component systems improving maintainability and development efficiency.",
+        "Implemented advanced state management for real-time UI updates and dashboard synchronization.",
+        "Optimized performance and interactive animations using Framer Motion and modern Next.js best practices."
+      ]
+    },
+    {
       title: "Hallos Platform | Frontend Developer",
-      date: "Oct 2025 – Dec 2026",
+      date: "Oct 2025 –  2026",
       points: [
         "Built and scaled a responsive learning platform using Next.js and Zustand, serving 5,000+ learners.",
         "Implemented real-time live class functionality using WebRTC and Socket.io.",
@@ -83,12 +116,27 @@ export const generateResumePDF = () => {
         "Architected a multi-vendor e-commerce platform using Next.js and Zustand.",
         "Engineered advanced product catalog and search systems with complex filtering.",
         "Developed secure cart and checkout workflows with transaction APIs.",
-        "Designed scalable PostgreSQL database architecture using Prisma ORM."
+        "Designed scalable PostgreSQL database architecture."
       ]
     }
   ];
 
+  const checkPageBreak = (neededHeight: number) => {
+    const pageHeight = doc.internal.pageSize.getHeight();
+    if (currentY + neededHeight > pageHeight - 20) {
+      doc.addPage();
+      currentY = 20;
+      return true;
+    }
+    return false;
+  };
+
   experiences.forEach(exp => {
+    const titleLines = doc.splitTextToSize(exp.title, pageWidth - 60);
+    const neededHeight = (titleLines.length * 6) + (exp.points.length * 7) + 10;
+    
+    checkPageBreak(neededHeight);
+
     doc.setFont("helvetica", "bold");
     doc.setFontSize(11);
     doc.text(exp.title, 20, currentY);
@@ -107,6 +155,7 @@ export const generateResumePDF = () => {
   });
 
   // --- CERTIFICATIONS ---
+  checkPageBreak(25);
   doc.setFont("helvetica", "bold");
   doc.setFontSize(14);
   doc.text("CERTIFICATIONS", 20, currentY);
