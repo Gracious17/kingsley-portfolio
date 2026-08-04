@@ -23,7 +23,7 @@ export function LoadMoreButton({
     >
       <button
         onClick={onClick}
-        className="group flex items-center gap-2.5 rounded-full bg-[#a362ff] px-7 py-3 text-xs font-semibold text-white transition-all hover:bg-[#b47dff] hover:shadow-[0_0_24px_rgba(163,98,255,0.35)] active:scale-95"
+        className="group flex items-center gap-2.5 rounded-full bg-[#a362ff] px-7 py-3 text-[13px] font-bold text-white inter-font tracking-wide transition-all hover:bg-[#b47dff] hover:shadow-[0_0_24px_rgba(163,98,255,0.35)] active:scale-95"
       >
         {label}
         <RefreshCw

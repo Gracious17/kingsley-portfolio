@@ -3,10 +3,10 @@ import { cn } from "@/lib/utils";
 import type { Accent } from "@/lib/data/projects";
 
 const accentClasses: Record<Accent, string> = {
-  violet: "text-[#a362ff]",
-  sky: "text-sky-400",
-  amber: "text-amber-400",
-  emerald: "text-emerald-400",
+  violet: "text-[#a362ff] font-medium",
+  sky: "text-sky-400 font-medium",
+  amber: "text-amber-400 font-medium",
+  emerald: "text-emerald-400 font-medium",
 };
 
 /**
