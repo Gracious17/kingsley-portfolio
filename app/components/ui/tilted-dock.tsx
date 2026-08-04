@@ -1,7 +1,7 @@
 "use client"; 
  
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"; 
-import { Home, Briefcase, Cpu, Mail, FileText } from "lucide-react"; 
+import { Home, Briefcase, Smartphone, Cpu, Mail, FileText } from "lucide-react";
 import { useState, useEffect, useRef } from "react"; 
 import { cn } from "@/lib/utils";
 import {
@@ -30,9 +30,10 @@ export default function TiltedDock({ resumeClick }: TiltedDockProps) {
   const icons = [ 
     { id: 1, icon: <Home className="w-5 h-5 md:w-6 md:h-6" />, label: "About", href: "#about" }, 
     { id: 2, icon: <Briefcase className="w-5 h-5 md:w-6 md:h-6" />, label: "Projects", href: "#projects" }, 
-    { id: 3, icon: <Cpu className="w-5 h-5 md:w-6 md:h-6" />, label: "Expertise", href: "#skills" }, 
-    { id: 4, icon: <Mail className="w-5 h-5 md:w-6 md:h-6" />, label: "Contact", href: "#contact" }, 
-    { id: 5, icon: <FileText className="w-5 h-5 md:w-6 md:h-6" />, label: "Resume", onClick: resumeClick }, 
+    { id: 3, icon: <Smartphone className="w-5 h-5 md:w-6 md:h-6" />, label: "Mobile", href: "#mobile" },
+    { id: 4, icon: <Cpu className="w-5 h-5 md:w-6 md:h-6" />, label: "Expertise", href: "#skills" },
+    { id: 5, icon: <Mail className="w-5 h-5 md:w-6 md:h-6" />, label: "Contact", href: "#contact" },
+    { id: 6, icon: <FileText className="w-5 h-5 md:w-6 md:h-6" />, label: "Resume", onClick: resumeClick },
   ]; 
  
   return ( 

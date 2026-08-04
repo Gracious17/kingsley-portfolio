@@ -2,10 +2,9 @@
 
 import React, { useState } from 'react';
 import { PortfolioPage, PortfolioPageProps } from "./ui/starfall-portfolio-landing";
-import { projects as projectData } from "@/lib/data/projects";
-import Image from "next/image";
 import Contact from "./Contact";
-import FeaturedProjects from "./FeaturedProjects";
+import PlatformProjects from "./PlatformProjects";
+import MobileApps from "./MobileApps";
 import Footer from "./Footer";
 import Review from "./Review";
 import ResumeModal from "./ResumeModal";
@@ -63,7 +62,10 @@ const PortfolioWrapper = () => {
             <Capabilities />
         </div>
         <div className="mt-20 md:mt-32 w-full">
-            <FeaturedProjects />
+            <PlatformProjects />
+        </div>
+        <div className="mt-20 md:mt-32 w-full">
+            <MobileApps />
         </div>
         <div className="mt-20 md:mt-32 w-full">
             <Skills />
