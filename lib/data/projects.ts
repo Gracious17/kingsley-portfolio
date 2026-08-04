@@ -37,6 +37,8 @@ export interface MobileApp {
   platforms: Array<"android" | "ios">;
   /** Live on a public app store. Drives the "N Published Apps" count. */
   published: boolean;
+  /** Renders an amber "In Progress" badge on the card. */
+  status?: "in-progress";
   playUrl?: string;
   appStoreUrl?: string;
   codeUrl?: string;
@@ -96,6 +98,58 @@ export const platformProjects: PlatformProject[] = [
     ],
   },
   {
+    id: "hallos",
+    title: "Hallos — Learning & Livestreaming Platform",
+    stack: "Next.js · Zustand · WebRTC · Socket.io",
+    description:
+      "Responsive learning platform serving {{5,000+ learners|violet}}. {{Real-time live classes|sky}} over {{WebRTC and Socket.io|sky}}, plus gamification — quizzes, tournaments, reward points — lifting engagement {{35%+|amber}}.",
+    tags: ["Next.js", "Zustand", "WebRTC", "Socket.io"],
+    metrics: [
+      { value: "5,000+", label: "Learners served" },
+      { value: "35%+", label: "Engagement lift" },
+      { value: "WebRTC", label: "Live classes" },
+    ],
+  },
+  {
+    id: "horizon-qa",
+    title: "Horizon — Software QA Testing Platform",
+    stack: "Next.js · TypeScript · Zustand · Framer Motion",
+    description:
+      "Led frontend architecture for a scalable {{QA testing platform|violet}} — {{multi-role dashboards|sky}} for admin, tester and client, each with distinct RBAC workflows and real-time state sync.",
+    tags: ["Next.js", "TypeScript", "Zustand", "RBAC"],
+    metrics: [
+      { value: "3", label: "Role dashboards" },
+      { value: "RBAC", label: "Access control" },
+      { value: "Zustand", label: "State architecture" },
+    ],
+  },
+  {
+    id: "latterworld",
+    title: "LatterWorld — School Management Platform",
+    stack: "Next.js · TypeScript · Zustand · REST",
+    description:
+      "Independently built a {{school management frontend|violet}} with {{role-based dashboards|sky}} for admins, teachers, students and parents — scheduling, examinations, attendance and academic results.",
+    tags: ["Next.js", "TypeScript", "Zustand", "RBAC"],
+    metrics: [
+      { value: "4", label: "Dashboard roles" },
+      { value: "RBAC", label: "Role workflows" },
+      { value: "REST", label: "API integration" },
+    ],
+  },
+  {
+    id: "morestore",
+    title: "MORESTORE — Multi-Vendor E-Commerce",
+    stack: "Next.js · Zustand · PostgreSQL",
+    description:
+      "{{Multi-vendor marketplace|violet}} with an advanced product catalog and {{complex search filtering|sky}}, {{secure cart and checkout|amber}} on transaction APIs, over a scalable PostgreSQL schema.",
+    tags: ["Next.js", "Zustand", "PostgreSQL", "E-commerce"],
+    metrics: [
+      { value: "Multi", label: "Vendor marketplace" },
+      { value: "Checkout", label: "Secure flow" },
+      { value: "Postgres", label: "Schema design" },
+    ],
+  },
+  {
     id: "areafada",
     title: "AreaFada OS — Creator-Economy SaaS",
     stack: "PostgreSQL · Render · Vercel",
@@ -106,19 +160,6 @@ export const platformProjects: PlatformProject[] = [
       { value: "AI→Prod", label: "Prototype hardened" },
       { value: "Render", label: "Infra migration" },
       { value: "FKs", label: "Schema integrity" },
-    ],
-  },
-  {
-    id: "safiox",
-    title: "Safiox — Emergency Response Platform",
-    stack: "Node.js · MongoDB · Socket.IO · Expo",
-    description:
-      "{{Real-time|violet}} platform linking people in danger to nearby responders, official services and personal contacts. {{SOS alerts|amber}} carry live GPS over {{Socket.IO|sky}}.",
-    tags: ["Node.js", "MongoDB", "Socket.IO", "React Native"],
-    metrics: [
-      { value: "SOS", label: "Live GPS alerts" },
-      { value: "Socket.IO", label: "Real-time dispatch" },
-      { value: "Expo", label: "React Native client" },
     ],
   },
   {
@@ -151,6 +192,25 @@ export const platformProjects: PlatformProject[] = [
 ];
 
 export const mobileApps: MobileApp[] = [
+  {
+    id: "vintran-mobile",
+    name: "Vintran",
+    group: "Fintech",
+    description:
+      "Fintech app led as {{Frontend Lead|violet}} — {{6-step onboarding|sky}}, 8-step signup, secure passcode recovery and transaction workflows.",
+    platforms: ["android", "ios"],
+    published: false,
+    status: "in-progress",
+  },
+  {
+    id: "safiox",
+    name: "Safiox",
+    group: "Emergency",
+    description:
+      "{{Real-time|violet}} SOS app linking people in danger to nearby responders, official services and personal contacts. {{Live GPS alerts|amber}} over Socket.IO.",
+    platforms: ["android", "ios"],
+    published: false,
+  },
   {
     id: "delve",
     name: "Delve",

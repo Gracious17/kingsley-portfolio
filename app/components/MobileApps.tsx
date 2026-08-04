@@ -101,9 +101,17 @@ export default function MobileApps() {
               className="glass-card rounded-2xl p-5 flex flex-col"
             >
               <div className="flex items-start justify-between gap-2 mb-4">
-                <span className="rounded-md border border-[#a362ff]/20 bg-[#a362ff]/[0.07] px-2 py-0.5 font-mono text-[10px] text-[#a362ff]/90">
-                  {app.group}
-                </span>
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="rounded-md border border-[#a362ff]/20 bg-[#a362ff]/[0.07] px-2 py-0.5 font-mono text-[10px] text-[#a362ff]/90">
+                    {app.group}
+                  </span>
+                  {app.status === "in-progress" && (
+                    <span className="inline-flex items-center gap-1 rounded-md border border-amber-400/25 bg-amber-400/[0.08] px-2 py-0.5 font-mono text-[10px] text-amber-400">
+                      <span className="h-1 w-1 rounded-full bg-amber-400 animate-pulse" />
+                      In Progress
+                    </span>
+                  )}
+                </div>
                 <StoreLinks app={app} />
               </div>
 
