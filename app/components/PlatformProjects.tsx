@@ -19,7 +19,7 @@ const ProjectCard = ({ project, index }: { project: PlatformProject; index: numb
     className="glass-card rounded-2xl p-5 flex flex-col h-full"
   >
     <div className="flex items-start justify-between gap-3">
-      <h3 className="text-sm font-semibold text-white geist-font tracking-tight leading-snug">
+      <h3 className="text-[15px] font-bold text-white geist-font tracking-tight leading-snug">
         {project.title}
       </h3>
       {(project.demoUrl || project.codeUrl) && (
@@ -50,18 +50,20 @@ const ProjectCard = ({ project, index }: { project: PlatformProject; index: numb
       )}
     </div>
 
-    <p className="mt-1.5 font-mono text-[10px] text-white/30 leading-relaxed">{project.stack}</p>
+    <p className="mt-1.5 text-[11px] font-medium text-white/40 inter-font tracking-wide">
+      {project.stack}
+    </p>
 
     <HighlightedText
       text={project.description}
-      className="mt-4 line-clamp-4 text-[12px] text-white/55 inter-font font-light leading-relaxed"
+      className="mt-4 line-clamp-4 text-[13px] text-white/70 inter-font leading-relaxed"
     />
 
     <div className="mt-4 flex flex-wrap gap-1.5">
       {project.tags.slice(0, 4).map((tag) => (
         <span
           key={tag}
-          className="rounded border border-[#a362ff]/20 bg-[#a362ff]/[0.07] px-2 py-0.5 font-mono text-[9px] text-[#a362ff]/90"
+          className="rounded-md border border-[#a362ff]/25 bg-[#a362ff]/10 px-2 py-0.5 text-[10px] font-semibold text-[#a362ff] inter-font"
         >
           {tag}
         </span>
@@ -73,10 +75,10 @@ const ProjectCard = ({ project, index }: { project: PlatformProject; index: numb
       <dl className="grid grid-cols-3 gap-2">
         {project.metrics.map((metric) => (
           <div key={metric.label} className="min-w-0">
-            <dt className="font-mono text-sm text-[#a362ff] leading-none truncate">
+            <dt className="text-lg font-bold text-[#a362ff] geist-font tracking-tight leading-none truncate">
               {metric.value}
             </dt>
-            <dd className="mt-1 text-[9px] text-white/35 inter-font leading-snug">
+            <dd className="mt-1.5 text-[10px] font-medium text-white/45 inter-font leading-snug">
               {metric.label}
             </dd>
           </div>
@@ -103,7 +105,7 @@ export default function PlatformProjects() {
           <h2 className="text-3xl md:text-5xl font-bold text-white geist-font tracking-tight">
             Portfolio
           </h2>
-          <p className="mt-3 text-sm md:text-base text-white/40 inter-font font-light">
+          <p className="mt-3 text-sm md:text-base font-medium text-white/50 inter-font">
             My Recent Works
           </p>
         </motion.div>
@@ -113,7 +115,7 @@ export default function PlatformProjects() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-6 font-mono text-[11px] uppercase tracking-[0.2em] text-[#a362ff]"
+          className="mb-6 text-[11px] font-bold uppercase tracking-[0.2em] text-[#a362ff] inter-font"
         >
           Selected Platform Projects
         </motion.p>

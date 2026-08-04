@@ -79,12 +79,12 @@ export default function MobileApps() {
           <h2 className="text-3xl md:text-5xl font-bold text-white geist-font tracking-tight">
             Mobile Applications
           </h2>
-          <p className="mt-3 text-sm md:text-base text-white/40 inter-font font-light">
+          <p className="mt-3 text-sm md:text-base font-medium text-white/50 inter-font">
             {publishedAppCount} Published Apps on{" "}
-            <span className="text-[#a362ff]">Google Play</span> &amp;{" "}
-            <span className="text-sky-400">the App Store</span>
+            <span className="text-[#a362ff] font-semibold">Google Play</span> &amp;{" "}
+            <span className="text-sky-400 font-semibold">the App Store</span>
           </p>
-          <p className="mt-4 mx-auto max-w-xl text-xs md:text-sm text-white/30 inter-font font-light leading-relaxed">
+          <p className="mt-4 mx-auto max-w-xl text-xs md:text-sm text-white/40 inter-font leading-relaxed">
             Some of the mobile apps I&apos;ve built and collaborated on for clients and my
             company — working on the <span className="text-white/50">frontends</span>.
           </p>
@@ -102,11 +102,11 @@ export default function MobileApps() {
             >
               <div className="flex items-start justify-between gap-2 mb-4">
                 <div className="flex flex-wrap items-center gap-1.5">
-                  <span className="rounded-md border border-[#a362ff]/20 bg-[#a362ff]/[0.07] px-2 py-0.5 font-mono text-[10px] text-[#a362ff]/90">
+                  <span className="rounded-md border border-[#a362ff]/25 bg-[#a362ff]/10 px-2 py-0.5 text-[10px] font-semibold text-[#a362ff] inter-font">
                     {app.group}
                   </span>
                   {app.status === "in-progress" && (
-                    <span className="inline-flex items-center gap-1 rounded-md border border-amber-400/25 bg-amber-400/[0.08] px-2 py-0.5 font-mono text-[10px] text-amber-400">
+                    <span className="inline-flex items-center gap-1 rounded-md border border-amber-400/30 bg-amber-400/10 px-2 py-0.5 text-[10px] font-semibold text-amber-400 inter-font">
                       <span className="h-1 w-1 rounded-full bg-amber-400 animate-pulse" />
                       In Progress
                     </span>
@@ -115,12 +115,12 @@ export default function MobileApps() {
                 <StoreLinks app={app} />
               </div>
 
-              <h3 className="text-sm font-semibold text-white geist-font tracking-tight">
+              <h3 className="text-[15px] font-bold text-white geist-font tracking-tight">
                 {app.name}
               </h3>
               <HighlightedText
                 text={app.description}
-                className="mt-2 block text-[11px] text-white/45 inter-font font-light leading-relaxed"
+                className="mt-2 block text-[12px] text-white/60 inter-font leading-relaxed"
               />
             </motion.article>
           ))}
