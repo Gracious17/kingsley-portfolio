@@ -67,6 +67,36 @@ export const generateResumePDF = () => {
 
   const experiences = [
     {
+      title: "StayOps ERP (Hotel Operations SaaS) | Full-Stack Engineer",
+      date: "2025 - 2026",
+      points: [
+        "Built a multi-tenant hotel operations platform spanning 50+ feature domains including front desk, POS, housekeeping, and accounting/payroll under strict tenant isolation.",
+        "Implemented a double-entry accounting engine enforcing debits-equal-credits in code with Decimal arithmetic, eliminating ledger drift.",
+        "Engineered an immutable guest ledger with atomic materialized-balance updates in the same transaction, plus three-layer JWT revocation and tiered rate limiting.",
+        "Ran a self-directed security audit that identified and fixed a cross-tenant IDOR vulnerability before release."
+      ]
+    },
+    {
+      title: "Pamela Business Operations Platform | Frontend Engineer",
+      date: "2025 - 2026",
+      points: [
+        "Built a multi-tenant SaaS platform serving 10+ business domains (finance, legal, sales, marketing, operations) behind a unified role-based permission system.",
+        "Implemented a Nigerian tax engine (VAT, PAYE, WHT, CIT) matching FIRS statutory rules, including progressive payroll brackets and per-expense withholding overrides.",
+        "Engineered a race-condition-safe embedded wallet using Postgres row locking and idempotency keys, integrated with Paystack for live transactions.",
+        "Designed a rule-based and LLM-hybrid decision layer that surfaces financial risks with AI reasoning, enforcing human-approval-only execution as a safety boundary."
+      ]
+    },
+    {
+      title: "Pamela Platform Back-Office | Frontend Engineer",
+      date: "2025 - 2026",
+      points: [
+        "Built the internal back-office giving staff a single cross-tenant workspace to process business registrations, review compliance submissions, and reconcile payments.",
+        "Modelled a guarded six-state registration lifecycle with server-mirrored rules (payment gating, certificate-gated completion, mandatory rejection reasons) surfaced as self-explaining UI affordances.",
+        "Architected a three-layer data access stack (transport, typed services, React Query hooks) with in-memory JWT handling and de-duplicated 401 refresh-and-retry.",
+        "Delivered a customer-360 support surface aggregating company, wallet, derived financials, registrations, and payments into a single screen."
+      ]
+    },
+    {
       title: "Vintran Mobile App | Frontend Lead Engineer",
       date: "Jan 2025 – 2026",
       points: [
@@ -131,27 +161,42 @@ export const generateResumePDF = () => {
     return false;
   };
 
+  // Layout constants. Tuned so the CV holds at two pages.
+  const BODY_SIZE = 9.5;
+  const BULLET_LINE = 4.4;
+  const TITLE_ADVANCE = 5.5;
+  const ENTRY_GAP = 3.5;
+
   experiences.forEach(exp => {
-    const titleLines = doc.splitTextToSize(exp.title, pageWidth - 60);
-    const neededHeight = (titleLines.length * 6) + (exp.points.length * 7) + 10;
-    
-    checkPageBreak(neededHeight);
+    // Wrap first, at the exact size the bullets render at, so the page-break
+    // estimate matches real height instead of guessing a flat 7mm per point.
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(BODY_SIZE);
+    const wrapped = exp.points.map(point =>
+      doc.splitTextToSize("• " + point, pageWidth - 45)
+    );
+    const bulletHeight = wrapped.reduce(
+      (sum: number, lines: string[]) => sum + lines.length * BULLET_LINE,
+      0
+    );
+
+    checkPageBreak(TITLE_ADVANCE + bulletHeight + ENTRY_GAP);
 
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(11);
+    doc.setFontSize(10.5);
     doc.text(exp.title, 20, currentY);
     doc.setFont("helvetica", "italic");
-    doc.setFontSize(10);
+    doc.setFontSize(BODY_SIZE);
     doc.text(exp.date, pageWidth - 20, currentY, { align: "right" });
-    currentY += 6;
+    currentY += TITLE_ADVANCE;
 
     doc.setFont("helvetica", "normal");
-    exp.points.forEach(point => {
-      const splitPoint = doc.splitTextToSize("• " + point, pageWidth - 45);
-      doc.text(splitPoint, 25, currentY);
-      currentY += splitPoint.length * 5;
+    doc.setFontSize(BODY_SIZE);
+    wrapped.forEach((lines: string[]) => {
+      doc.text(lines, 25, currentY);
+      currentY += lines.length * BULLET_LINE;
     });
-    currentY += 5;
+    currentY += ENTRY_GAP;
   });
 
   // --- CERTIFICATIONS ---
