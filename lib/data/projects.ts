@@ -98,6 +98,19 @@ export const platformProjects: PlatformProject[] = [
     ],
   },
   {
+    id: "pamela-backoffice",
+    title: "Pamela — Platform Back-Office",
+    stack: "Next.js · TypeScript · TanStack Query · Supabase",
+    description:
+      "{{Multi-tenant back-office|violet}} where staff work registrations, review compliance and reconcile payments across every tenant. {{Guarded state machines|sky}} explain why a transition is blocked; {{every action audited|amber}}.",
+    tags: ["Next.js", "TypeScript", "TanStack Query", "Multi-Tenant"],
+    metrics: [
+      { value: "8", label: "Admin screens" },
+      { value: "18", label: "Staff endpoints" },
+      { value: "2", label: "State machines" },
+    ],
+  },
+  {
     id: "hallos",
     title: "Hallos — Learning & Livestreaming Platform",
     stack: "Next.js · Zustand · WebRTC · Socket.io",
