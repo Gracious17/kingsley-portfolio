@@ -98,6 +98,19 @@ export const platformProjects: PlatformProject[] = [
     ],
   },
   {
+    id: "pamela-platform",
+    title: "Pamela — Business Operations Platform",
+    stack: "Next.js · TypeScript · Supabase · Paystack",
+    description:
+      "{{AI-augmented multi-tenant SaaS|violet}} running finance, legal, sales and operations for African SMEs. {{From-scratch FIRS tax engine|sky}} (VAT/PAYE/WHT/CIT) and a {{race-safe embedded wallet|amber}} — the AI never auto-executes.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Paystack"],
+    metrics: [
+      { value: "10+", label: "Business domains" },
+      { value: "4", label: "FIRS tax regimes" },
+      { value: "3", label: "Countries supported" },
+    ],
+  },
+  {
     id: "pamela-backoffice",
     title: "Pamela — Platform Back-Office",
     stack: "Next.js · TypeScript · TanStack Query · Supabase",
