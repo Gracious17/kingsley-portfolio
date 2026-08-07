@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { PortfolioPage, PortfolioPageProps } from "./ui/starfall-portfolio-landing";
+import { publishedAppCount } from "@/lib/data/projects";
 import Contact from "./Contact";
 import PlatformProjects from "./PlatformProjects";
 import MobileApps from "./MobileApps";
@@ -29,13 +30,23 @@ const PortfolioWrapper = () => {
       onClick: () => setIsResumeModalOpen(true),
     },
     hero: {
-      titleLine1: 'Software Engineer &',
-      titleLine2Gradient: 'Digital Innovator',
-      subtitle: 'I build robust and scalable web and mobile applications with a focus on modern technologies and user-centric design.',
+      eyebrow: 'HEY THERE !',
+      name: "I'm Gracious Kingsley",
+      roles: [
+        'Full-Stack & Mobile Engineer',
+        'React & Next.js Specialist',
+        'React Native Developer',
+      ],
+      description:
+        'I build web and mobile products where the details matter: {{multi-tenant SaaS platforms|violet}}, {{role-based dashboards|sky}} and {{real-time systems|sky}}, alongside {{14 published mobile apps|violet}} on Google Play and the App Store.',
+      headshot: {
+        src: 'https://res.cloudinary.com/dblsgkbk4/image/upload/v1786105476/IMG-20260803-WA0013_vxkhva.jpg',
+        alt: 'Gracious Kingsley',
+      },
     },
     ctaButtons: {
       primary: {
-        label: 'View Projects',
+        label: 'View Works',
         onClick: () => {
           document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
         },
@@ -48,9 +59,13 @@ const PortfolioWrapper = () => {
       },
     },
     stats: [
-      { value: '4+', label: 'Years Experience' },
-      { value: '15+', label: 'Technologies Mastered' },
-      { value: '10+', label: 'Projects Completed' },
+      {
+        value: String(publishedAppCount),
+        label: 'Published mobile apps on Google Play and the App Store',
+      },
+      { value: '5,000+', label: 'Learners served on the Hallos live-class platform' },
+      { value: '50+', label: 'Feature domains shipped in the StayOps hotel ERP' },
+      { value: '4+', label: 'Years building production web and mobile systems' },
     ],
     showAnimatedBackground: true,
   };
