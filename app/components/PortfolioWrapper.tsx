@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { PortfolioPage, PortfolioPageProps } from "./ui/starfall-portfolio-landing";
 import { publishedAppCount } from "@/lib/data/projects";
+import About from "./About";
 import Contact from "./Contact";
 import PlatformProjects from "./PlatformProjects";
 import MobileApps from "./MobileApps";
@@ -74,6 +75,9 @@ const PortfolioWrapper = () => {
     <>
       <PortfolioPage {...customPortfolioData}>
         <div className="w-full">
+            <About onDownloadCV={() => setIsResumeModalOpen(true)} />
+        </div>
+        <div className="mt-20 md:mt-32 w-full">
             <Capabilities />
         </div>
         <div className="mt-20 md:mt-32 w-full">
