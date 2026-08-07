@@ -2,11 +2,13 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import type { Accent } from "@/lib/data/projects";
 
+// font-semibold keeps highlighted phrases distinct now that body copy in the
+// About section runs at font-medium.
 const accentClasses: Record<Accent, string> = {
-  violet: "text-[#a362ff] font-medium",
-  sky: "text-sky-400 font-medium",
-  amber: "text-amber-400 font-medium",
-  emerald: "text-emerald-400 font-medium",
+  violet: "text-[#a362ff] font-semibold",
+  sky: "text-sky-400 font-semibold",
+  amber: "text-amber-400 font-semibold",
+  emerald: "text-emerald-400 font-semibold",
 };
 
 /**
