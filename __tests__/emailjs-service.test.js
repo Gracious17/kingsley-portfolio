@@ -125,13 +125,14 @@ describe('EmailJS Service', () => {
 
       const templateParams = mapFormDataToTemplateParams(formData);
 
+      // Field names match the live EmailJS template: phone -> time,
+      // subject -> title. See mapFormDataToTemplateParams.
       expect(templateParams).toEqual({
-        from_name: 'John Doe',
-        from_email: 'john@example.com',
-        phone: '+1234567890',
-        subject: 'Test Subject',
+        name: 'John Doe',
+        email: 'john@example.com',
         message: 'Test message content',
-        to_email: 'kingsleygracious16@gmail.com'
+        time: '+1234567890',
+        title: 'Test Subject'
       });
     });
 
@@ -144,12 +145,11 @@ describe('EmailJS Service', () => {
 
       const templateParams = mapFormDataToTemplateParams(formData);
 
-      expect(templateParams.from_name).toBe('John Doe');
-      expect(templateParams.from_email).toBe('john@example.com');
-      expect(templateParams.phone).toBe('');
-      expect(templateParams.subject).toBe('No subject provided');
+      expect(templateParams.name).toBe('John Doe');
+      expect(templateParams.email).toBe('john@example.com');
+      expect(templateParams.time).toBe('');
+      expect(templateParams.title).toBe('No subject provided');
       expect(templateParams.message).toBe('');
-      expect(templateParams.to_email).toBe('kingsleygracious16@gmail.com');
     });
 
     test('should handle empty form data', () => {
@@ -157,12 +157,11 @@ describe('EmailJS Service', () => {
 
       const templateParams = mapFormDataToTemplateParams(formData);
 
-      expect(templateParams.from_name).toBe('');
-      expect(templateParams.from_email).toBe('');
-      expect(templateParams.phone).toBe('');
-      expect(templateParams.subject).toBe('No subject provided');
+      expect(templateParams.name).toBe('');
+      expect(templateParams.email).toBe('');
+      expect(templateParams.time).toBe('');
+      expect(templateParams.title).toBe('No subject provided');
       expect(templateParams.message).toBe('');
-      expect(templateParams.to_email).toBe('kingsleygracious16@gmail.com');
     });
   });
 
@@ -199,12 +198,11 @@ describe('EmailJS Service', () => {
         'service_acvtu5p',
         'template_6pve3nf',
         expect.objectContaining({
-          from_name: 'John Doe',
-          from_email: 'john@example.com',
-          phone: '+1234567890',
-          subject: 'Test Subject',
+          name: 'John Doe',
+          email: 'john@example.com',
           message: 'Test message',
-          to_email: 'kingsleygracious16@gmail.com'
+          time: '+1234567890',
+          title: 'Test Subject'
         }),
         'iNsxXLdF4w74sIEzg'
       );

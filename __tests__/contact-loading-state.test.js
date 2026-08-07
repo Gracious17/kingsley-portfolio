@@ -93,11 +93,11 @@ describe('Contact Component Loading State Management', () => {
 
       // Verify loading state is shown
       await waitFor(() => {
-        expect(screen.getByText('Sending Message...')).toBeInTheDocument();
+        expect(screen.getByText('Sending...')).toBeInTheDocument();
       });
 
       // Verify button is disabled during loading
-      const submitButton = screen.getByRole('button', { name: /sending message/i });
+      const submitButton = screen.getByRole('button', { name: /sending.../i });
       expect(submitButton).toBeDisabled();
 
       // Resolve the promise to complete the operation
@@ -105,7 +105,7 @@ describe('Contact Component Loading State Management', () => {
 
       // Verify loading state is cleared
       await waitFor(() => {
-        expect(screen.queryByText('Sending Message...')).not.toBeInTheDocument();
+        expect(screen.queryByText('Sending...')).not.toBeInTheDocument();
       });
     });
 
@@ -138,12 +138,12 @@ describe('Contact Component Loading State Management', () => {
 
       // Verify button is disabled and shows loading text
       await waitFor(() => {
-        const loadingButton = screen.getByRole('button', { name: /sending message/i });
+        const loadingButton = screen.getByRole('button', { name: /sending.../i });
         expect(loadingButton).toBeDisabled();
       });
 
       // Try to click the button again (should not trigger another call)
-      const loadingButton = screen.getByRole('button', { name: /sending message/i });
+      const loadingButton = screen.getByRole('button', { name: /sending.../i });
       fireEvent.click(loadingButton);
 
       // Verify sendEmail was only called once
@@ -181,12 +181,12 @@ describe('Contact Component Loading State Management', () => {
 
       // Verify loading state appears briefly
       await waitFor(() => {
-        expect(screen.getByText('Sending Message...')).toBeInTheDocument();
+        expect(screen.getByText('Sending...')).toBeInTheDocument();
       });
 
       // Verify loading state is cleared and button is re-enabled after error
       await waitFor(() => {
-        expect(screen.queryByText('Sending Message...')).not.toBeInTheDocument();
+        expect(screen.queryByText('Sending...')).not.toBeInTheDocument();
         const submitButton = screen.getByRole('button', { name: /send message/i });
         expect(submitButton).not.toBeDisabled();
       });
@@ -225,7 +225,7 @@ describe('Contact Component Loading State Management', () => {
 
       // Verify loading state
       await waitFor(() => {
-        expect(screen.getByText('Sending Message...')).toBeInTheDocument();
+        expect(screen.getByText('Sending...')).toBeInTheDocument();
       });
 
       // Wait for completion
