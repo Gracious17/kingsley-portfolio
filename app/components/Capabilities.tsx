@@ -50,10 +50,10 @@ const Capabilities = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white geist-font tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground geist-font tracking-tight">
             Capabilities
           </h2>
-          <p className="mt-3 text-sm md:text-base font-medium text-white/50 inter-font">
+          <p className="mt-3 text-sm md:text-base font-medium text-primary inter-font">
             What I can help with
           </p>
         </motion.div>
@@ -86,7 +86,7 @@ const Capabilities = () => {
                       (onLeft ? "lg:col-start-1 lg:pr-14" : "lg:col-start-2 lg:pl-14")
                     }
                   >
-                    <h3 className="text-lg md:text-xl font-bold text-white geist-font tracking-tight">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground geist-font tracking-tight">
                       {item.title}
                     </h3>
 
@@ -96,7 +96,7 @@ const Capabilities = () => {
                           {i > 0 && (
                             <span className="h-1 w-1 rounded-full bg-white/25" aria-hidden />
                           )}
-                          <span className="text-xs font-semibold text-[#a362ff] inter-font">
+                          <span className="text-[13px] font-bold text-muted-foreground inter-font">
                             {tag}
                           </span>
                         </React.Fragment>
@@ -112,7 +112,7 @@ const Capabilities = () => {
                           />
                           <HighlightedText
                             text={point}
-                            className="block text-sm font-medium text-white/75 inter-font leading-relaxed"
+                            className="block text-[15px] md:text-base font-semibold text-muted-foreground inter-font leading-relaxed"
                           />
                         </li>
                       ))}
