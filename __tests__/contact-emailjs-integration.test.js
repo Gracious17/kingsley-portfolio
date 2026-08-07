@@ -158,7 +158,7 @@ describe('Contact Component EmailJS Integration', () => {
       });
     });
 
-    test('should handle empty subject field with default value', async () => {
+    test('should not submit when the required subject field is empty', async () => {
       sendEmail.mockResolvedValue({ success: true, status: 200, text: 'OK' });
       initializeEmailJS.mockReturnValue({
         serviceId: 'service_acvtu5p',
@@ -168,26 +168,21 @@ describe('Contact Component EmailJS Integration', () => {
 
       render(<Contact />);
 
-      // Fill out the form but leave subject empty
+      // Fill everything except subject, which is marked required in Contact.jsx.
       const inputs = screen.getAllByDisplayValue('');
       fireEvent.change(inputs[0], { target: { name: 'name', value: 'Test User' } });
       fireEvent.change(inputs[1], { target: { name: 'phone', value: '1234567890' } });
       fireEvent.change(inputs[2], { target: { name: 'email', value: 'test@example.com' } });
-      // Skip subject field (inputs[3])
+      // inputs[3] (subject) deliberately left blank
       fireEvent.change(inputs[4], { target: { name: 'message', value: 'Test message' } });
 
-      // Submit the form
       fireEvent.click(screen.getByRole('button', { name: /send message/i }));
 
-      // Verify EmailJS is called with form data including empty subject
+      // Native required-field validation blocks submit, so nothing is sent.
+      // The "no subject provided" default is covered at the service layer in
+      // emailjs-service.test.js, which is where that behaviour actually lives.
       await waitFor(() => {
-        expect(sendEmail).toHaveBeenCalledWith({
-          name: 'Test User',
-          phone: '1234567890',
-          email: 'test@example.com',
-          subject: '', // Empty subject should be passed as-is
-          message: 'Test message'
-        });
+        expect(sendEmail).not.toHaveBeenCalled();
       });
     });
   });
