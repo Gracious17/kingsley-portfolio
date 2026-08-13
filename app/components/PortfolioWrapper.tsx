@@ -3,6 +3,12 @@
 import React, { useState } from 'react';
 import { PortfolioPage, PortfolioPageProps } from "./ui/starfall-portfolio-landing";
 import { publishedAppCount } from "@/lib/data/projects";
+import {
+  InView,
+  inViewVariants,
+  inViewTransition,
+  inViewOptions,
+} from "./core/in-view";
 import About from "./About";
 import Contact from "./Contact";
 import PlatformProjects from "./PlatformProjects";
@@ -71,31 +77,43 @@ const PortfolioWrapper = () => {
     showAnimatedBackground: true,
   };
 
+  const sections = [
+    {
+      key: "about",
+      node: <About onDownloadCV={() => setIsResumeModalOpen(true)} />,
+      spaced: false,
+    },
+    { key: "capabilities", node: <Capabilities />, spaced: true },
+    { key: "projects", node: <PlatformProjects />, spaced: true },
+    { key: "mobile", node: <MobileApps />, spaced: true },
+    { key: "skills", node: <Skills />, spaced: true },
+    { key: "review", node: <Review />, spaced: true },
+    { key: "contact", node: <Contact />, spaced: true },
+    { key: "footer", node: <Footer />, spaced: false },
+  ];
+
   return (
     <>
       <PortfolioPage {...customPortfolioData}>
-        <div className="w-full">
-            <About onDownloadCV={() => setIsResumeModalOpen(true)} />
+        {/*
+          Every section shares one scroll-triggered reveal. `once` stays false,
+          so a section re-animates each time it comes back into view.
+          overflow-x-hidden guards against the transform briefly widening the
+          page during the reveal.
+        */}
+        <div className="w-full overflow-x-hidden">
+          {sections.map(({ key, node, spaced }) => (
+            <div key={key} className={spaced ? "mt-20 md:mt-32 w-full" : "w-full"}>
+              <InView
+                variants={inViewVariants.blurUp}
+                transition={inViewTransition}
+                viewOptions={inViewOptions}
+              >
+                {node}
+              </InView>
+            </div>
+          ))}
         </div>
-        <div className="mt-20 md:mt-32 w-full">
-            <Capabilities />
-        </div>
-        <div className="mt-20 md:mt-32 w-full">
-            <PlatformProjects />
-        </div>
-        <div className="mt-20 md:mt-32 w-full">
-            <MobileApps />
-        </div>
-        <div className="mt-20 md:mt-32 w-full">
-            <Skills />
-        </div>
-          <div className="mt-20 md:mt-32 w-full">
-              <Review />
-          </div>
-          <div className="mt-20 md:mt-32 w-full">
-              <Contact />
-          </div>
-          <Footer />
       </PortfolioPage>
       
       <ResumeModal 
