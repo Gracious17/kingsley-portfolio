@@ -22,8 +22,8 @@ const seeded = (index: number, salt: number) => {
 const STAGGER = 0.075;
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 48, scale: 0.92 },
-  visible: {
+  scattered: { opacity: 0, y: 48, scale: 0.92 },
+  assembled: {
     opacity: 1,
     y: 0,
     scale: 1,
@@ -32,14 +32,14 @@ const cardVariants: Variants = {
 };
 
 const letterVariants: Variants = {
-  hidden: (i: number) => ({
+  scattered: (i: number) => ({
     x: (seeded(i, 1) - 0.5) * 520,
     y: (seeded(i, 2) - 0.5) * 400 - 70,
     rotate: (seeded(i, 3) - 0.5) * 240,
     scale: 0.25,
     opacity: 0,
   }),
-  visible: (i: number) => ({
+  assembled: (i: number) => ({
     x: 0,
     y: 0,
     rotate: 0,
@@ -59,8 +59,8 @@ const letterVariants: Variants = {
 // so the whole sequence is owned by the card's scroll trigger. With `animate`
 // they fire on mount and would be finished before the card is ever seen.
 const orbVariants: Variants = {
-  hidden: { opacity: 0, scale: 0 },
-  visible: (i: number) => ({
+  scattered: { opacity: 0, scale: 0 },
+  assembled: (i: number) => ({
     opacity: [0, 1, 1, 0],
     scale: [0, 1, 1.8, 0],
     transition: {
@@ -92,8 +92,8 @@ export function NameAssemblyBanner({
     <motion.div
       key={runId}
       variants={cardVariants}
-      initial={reduceMotion ? "visible" : "hidden"}
-      whileInView="visible"
+      initial={reduceMotion ? "assembled" : "scattered"}
+      whileInView="assembled"
       viewport={{ once: false, amount: 0.35 }}
       className={cn(
         "group relative overflow-hidden rounded-[2rem] border border-white/15",
@@ -154,8 +154,8 @@ export function NameAssemblyBanner({
 
         <motion.span
           variants={{
-            hidden: { opacity: 0, y: 8 },
-            visible: {
+            scattered: { opacity: 0, y: 8 },
+            assembled: {
               opacity: 1,
               y: 0,
               transition: { delay: settleTime + 0.5, duration: 0.6 },
@@ -171,8 +171,8 @@ export function NameAssemblyBanner({
       {!reduceMotion && (
         <motion.div
           variants={{
-            hidden: { x: "-130%" },
-            visible: {
+            scattered: { x: "-130%" },
+            assembled: {
               x: "130%",
               transition: { delay: settleTime + 0.2, duration: 1.1, ease: "easeInOut" },
             },

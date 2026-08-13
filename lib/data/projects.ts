@@ -70,6 +70,7 @@ export const platformProjects: PlatformProject[] = [
       { value: "0", label: "Ledger drift" },
       { value: "IDOR", label: "Fixed pre-release" },
     ],
+    demoUrl: "https://stayop-erp.vercel.app",
   },
   {
     id: "yourateme",
@@ -109,6 +110,7 @@ export const platformProjects: PlatformProject[] = [
       { value: "4", label: "FIRS tax regimes" },
       { value: "3", label: "Countries supported" },
     ],
+    demoUrl: "https://www.askpamela.ai",
   },
   {
     id: "pamela-backoffice",
@@ -135,6 +137,7 @@ export const platformProjects: PlatformProject[] = [
       { value: "35%+", label: "Engagement lift" },
       { value: "WebRTC", label: "Live classes" },
     ],
+    demoUrl: "https://www.hallos.net",
   },
   {
     id: "horizon-qa",
@@ -148,6 +151,7 @@ export const platformProjects: PlatformProject[] = [
       { value: "RBAC", label: "Access control" },
       { value: "Zustand", label: "State architecture" },
     ],
+    demoUrl: "https://test-horizon-frontend-service.vercel.app",
   },
   {
     id: "latterworld",
